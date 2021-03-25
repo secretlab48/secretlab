@@ -1,0 +1,16 @@
+.page-about {
+  .site-wrapper { background-color : $text-color; }
+  .header-element { background-color : $text-color; }
+  .page-box { padding : 60px 0 0 0; min-height : calc(100vh - 121px); }
+  .page-content { }
+}
+
+.pa-item-box {
+  position : relative; padding: 0 10% 15px 15px;
+  h2 { }
+}
+
+.pa-subtitle { position : absolute; right : 0; top : 20px; writing-mode: vertical-rl; font-weight: 700; letter-spacing: 2px; font-family: 'Russo One'; }
+.pa-item {
+  p { }
+}

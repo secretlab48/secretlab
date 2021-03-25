@@ -1,0 +1,65 @@
+.page-template { display : flex; margin-top : 60px; }
+.page-template.has-not-sidebar { display : block; }
+.page-template__content {  }
+.blog .page-content, .archive.category .page-content { min-height : calc(100vh - 60px); }
+.blog .page-template__content, .archive.category .page-template__content { padding : 0 15px; }
+
+.post-archive-heading { margin : 20px 0 0 0; }
+
+.posts-archive-cats-box { }
+.post-archive-cat-item-box {
+  display : inline-block; margin : 20px 20px 0 0; border : 1px solid $grey; transition : all 0.4s;
+  &:hover {
+    background-color : $grey;
+    .post-archive-cat-item { color : $text-color; }
+  }
+  .post-archive-cat-item {
+    display : block; padding : 10px 15px; color : $grey; border-radius : 15px;
+    &.active-category { text-decoration : underline; }
+  }
+
+}
+
+
+
+.posts-archive-items-box { }
+.post-archive-item-box, .post-archive-item-box__grid-sizer { width : calc(50% - 10px); margin : 0 0 15px 0; }
+.post-archive-item {
+  padding : 0 0 15px 0; border-bottom : 1px solid #000;
+  h2 {
+    margin : 25px 0 0 0;
+    a {
+      color: $primary-decor-color;
+      font-weight: 700;
+      font-size: 24px;
+    }
+  }
+}
+a.post-archive__thumbnail {
+  display : block; overflow : hidden;
+  img { transition : all 0.4s; }
+  &:hover img { transform : scale(1.2); }
+}
+.post-archive__date { font-size : 14px; font-style : italic; }
+.post-archive__excerpt {
+  p {
+    line-height: 1.8;
+  }
+}
+
+
+.blog .pagination, .archive.category .pagination { display : flex; }
+.blog .pagination .page-numbers, .archive.category .pagination .page-numbers { display: flex; justify-content: center; font-size: 12px; align-items: center;  width : 25px; height : 25px; margin : 0 15px 0 0; border : 1px solid $grey; /*border-radius : 50%;*/ transition : all 0.4s; }
+.blog .pagination .page-numbers.current, .archive.category .pagination .page-numbers.current { background-color : $grey; color : $text-color; }
+.blog .pagination .page-numbers:hover, .archive.category .pagination .page-numbers:hover { background-color : $grey; color : $text-color; }
+.blog .pagination span.page-numbers, .archive.category .pagination span.page-numbers { }
+.blog .pagination a.page-numbers, .archive.category .pagination a.page-numbers { color : $grey; }
+.blog .pagination a.page-numbers.prev:after, .archive.category .pagination a.page-numbers.prev:after { font-family : FontAwesome; content : '\f100'; }
+.blog .pagination a.page-numbers.next:after, .archive.category .pagination a.page-numbers.next:after { font-family : FontAwesome; content : '\f101'; }
+
+
+
+@media screen and ( max-width : 992px ) {
+  .post-archive-item-box, .post-archive-item-box__grid-sizer { width : 100%; }
+}
+

@@ -1,0 +1,173 @@
+.portfolio-first-screen {
+  @include flex-center;
+  position : relative; min-height : 100vh; flex-direction: column;
+  h1 { position: relative; color: $text-color; text-transform: uppercase; max-width: 576px; padding : 0 15px; text-align: center; line-height: 1; font-family : 'Russo One'; font-size : 60px; font-weight : 700; }
+  .pfs-short-info {
+      position : absolute; bottom : 0; right : 0; min-width : 40%; display : flex; padding : 40px; background-color : $text-color;
+      &__description { flex : 0 0 calc(50% - 40px); @include flex-center; font-family : 'Russo One'; font-size : 22px; font-weight: 700; }
+      &__link {
+        flex : 0 0 calc(50% - 40px); @include flex-center;
+        a { color : $grey; }
+      }
+  }
+}
+.pfs-picture-box { position : relative; width : 100%; height : 100%; touch-action: auto; }
+.pfs-picture { position : fixed; left : 0; top : 0; width : 100%; height : 100vh; }
+
+.portfolio-content-box, .page-box { position : relative; }
+.portfolio-content, .page-content { padding : 0 $footer-height 0 $screen-left-padding; background-color : $st-grey; }
+.portfolio-tasks { padding : 50px 25px; }
+.portfolio-task {
+  display : flex; justify-content : space-between; color : $main-bg-color; margin: 0 0 40px 0;
+  &__title { flex : 0 0 41%; font-family : 'Russo One'; font-size : 48px; color : $primary-decor-color; }
+  &__title span { position : relative; display: inline-block; font-weight: 700; text-transform: uppercase; }
+  &__title span:before { position: absolute; top: 15%; bottom: 0; left: 0; right: 100%; background-color: $st-grey; content: ''; }
+  &__title span.enable:before { animation-name: intro; animation-duration: 1s; animation-fill-mode: forwards; }
+  &__description { position : relative; flex : 0 0 41%; max-width: 41%; }
+}
+
+
+
+
+.swiper-container {
+  width: 100%;
+  height: auto;
+}
+
+.portfolio-features { position : relative; z-index : 0; }
+.portfolio-features-service { }
+.portfolio-feature-box {
+  .feature-image { }
+  .feature-title { margin: 15px 0 0 0; font-family : 'Russo One'; font-size : 20px; font-weight: 700; color : $primary-decor-color; line-height : 1; }
+  .feature-description { }
+}
+.swiper-pagination-custom {
+  position : absolute; top : 0; height : 100%; width : $swiper-bar-width; left : -$swiper-bar-width; display : flex; flex-direction : column;
+  .swiper-pagination-clickable {
+    position : relative; font-family : 'Russo One'; font-weight : 700; font-size : $swiper-bar-width/5; width : $swiper-bar-width/2 + 5px; height : $swiper-bar-width/2 + 5px; @include flex-center; cursor : pointer; background : transparent; border-radius : 0; opacity : 1; color : $grey; transition : all 0.3s; -moz-transition: all .3s linear;
+    &:after { content : ''; position : absolute; left : $swiper-bar-width/2 + 5px + 4px; width : $swiper-line-width; height : 2px; background-color : $grey; transition : all 0.4s; }
+    &.active:after { width : $swiper-bar-width/2 - 13px; }
+    &.active { font-size : $swiper-bar-width/2; /*transform: scale(1.5);*/ }
+  }
+}
+
+
+.mfp-zoom-out {
+
+  /* start state */
+  .mfp-with-anim {
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    transform: scale(1.3);
+  }
+
+  &.mfp-bg {
+    opacity: 0;
+    transition: all 0.3s ease-out;
+  }
+
+  /* animate in */
+  &.mfp-ready {
+    .mfp-with-anim {
+      opacity: 1;
+      transform: scale(1);
+    }
+    &.mfp-bg {
+      opacity: 0.8;
+    }
+  }
+
+  /* animate out */
+  &.mfp-removing {
+
+    .mfp-with-anim {
+      transform: scale(1.3);
+      opacity: 0;
+    }
+    &.mfp-bg {
+      opacity: 0;
+    }
+
+  }
+
+}
+
+
+.mfp-zoom-in {
+
+  /* start state */
+  .mfp-with-anim {
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+    transform: scale(0.8);
+  }
+
+  &.mfp-bg {
+    opacity: 0;
+    transition: all 0.3s ease-out;
+  }
+
+  /* animate in */
+  &.mfp-ready {
+    .mfp-with-anim {
+      opacity: 1;
+      transform: scale(1);
+    }
+    &.mfp-bg {
+      opacity: 0.8;
+    }
+  }
+
+  /* animate out */
+  &.mfp-removing {
+
+    .mfp-with-anim {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    &.mfp-bg {
+      opacity: 0;
+    }
+
+  }
+
+}
+
+
+@keyframes intro {
+  from {
+    right : 100%;
+    left : 0;
+  }
+
+  to {
+      left : 100%;
+      right : 0;
+  }
+
+  50% {
+    left : 0;
+    right : 0;
+  }
+
+}
+
+
+@media screen and ( max-width : 992px ) {
+
+  .portfolio-task { display: block; }
+  .portfolio-task__description { max-width : 100%; }
+  .portfolio-features { width : 100%; }
+  .swiper-pagination-custom { position : static; width : 100%; flex-direction : row; }
+  .swiper-pagination-custom .swiper-pagination-clickable::after { display : none; }
+  .portfolio-first-screen .pfs-short-info { width: calc(100% - 180px); padding : 40px $footer-height 40px $screen-left-padding; }
+
+}
+
+@media screen and ( max-width : 640px ) {
+  .portfolio-first-screen .pfs-short-info { display : block; width : calc(100% - 30px); padding : 15px; }
+  .portfolio-first-screnn h1 { word-break: break-all; }
+  .portfolio-content { padding : 15px; }
+  .portfolio-tasks { padding : 0; }
+}
+
