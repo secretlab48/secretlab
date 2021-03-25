@@ -1,0 +1,59 @@
+.page-portfolio .site-wrapper  { background-color : $st-grey; }
+.page-portfolio .header-element, .page-about .header-element { color : $grey; }
+.page-portfolio .wp-block-group__inner-container { min-height : calc(90vh - 60px); }
+.page-portfolio .mpc { padding: 40px 0; }
+.page-portfolio .mpc h2 { padding-left : 15px; padding-right : 15px; }
+.page-portfolio .footer, .page-about .footer, .single-portfolio .footer {
+  position : relative; left : 0; width : 100%; transform : none; background-color : $st-grey;
+  .footer-box { justify-content: space-between; padding: 0 60px 0 120px; }
+}
+
+.portfolio-description-box {
+  margin : 10vh auto 0 auto; max-width : 768px; text-align: center;
+  h2 { text-transform : uppercase; }
+  .pb-descriptiion { font-size : 20px; color: $grey; }
+}
+
+.portfolio-cats { display: flex; justify-content: space-between; margin : 25px auto; max-width : 768px; }
+.portfolio-cat-item, .portfolio-cat-item:hover { position : relative; margin : 0 10px 0 0; color: #878787; }
+.portfolio-cat-item:after { position : absolute; content : ''; left : 0; bottom : -5px; width : 20px; height : 2px; background-color : #878787; transition : all 0.4s; }
+.portfolio-cat-item.active, .portfolio-cat-item:hover { color : $grey; }
+.portfolio-cat-item.active:after { width : 100%; }
+.portfolio-cat-item:first-child { margin-left : 10px; }
+
+.portfolios-items-box { }
+.portfolio-item-box, .portfolio-grid-sizer { width : 50%; }
+.portfolio-item {
+  display : block; position : relative;
+  img { filter: brightness(75%); }
+}
+
+
+.portfolio-item__info { position : absolute; left : 35px; bottom : 35px; }
+.portfolio-item__info:after { position: absolute; content : ''; left : 0; bottom : -5px; width : 50px; height : 2px; background-color : $text-color; opacity : 0; transition : all 0.4s; }
+.portfolio-item-box:hover .portfolio-item__info:after { opacity : 1; }
+.portfolio-item__name { font-size : 24px; font-weight : 700; text-transform : capitalize; }
+.portfolio-item__name, .portfolio-item__description { transition : all 0.4s; }
+.portfolio-item-box:hover .portfolio-item__name, .portfolio-item-box:hover .portfolio-item__description { transform : translateY(-20px); }
+
+
+
+
+
+
+@media screen and ( max-width : 1140px ) {
+
+  .portfolio-item-box { margin : 0 0 15px 0; }
+  .portfolio-item-box, .portfolio-grid-sizer { width : 100%; }
+
+}
+
+@media screen and ( max-width : 640px ) {
+
+  .page-content { padding : 15px; }
+  .portfolio-cats { display : block; }
+  .portfolio-cat-item:first-child { margin : 0; }
+  .portfolio-cat-item { display : block; margin : 0; }
+  .portfolio-cat-item:after { content : none; }
+
+}

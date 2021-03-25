@@ -1,0 +1,17 @@
+.row-box {
+  display : flex;
+  flex-wrap : wrap; // to arrange columns by rowsm if it is needed
+  margin : 0 -10px; // our columns has extra right and left width in 10px, wich padding produced, so edge columns will be placed width responsive offsets - -10px left for edge left columns and -10px for edge right colunms.
+}
+.column-box {
+  flex : 0 0 calc(50% - 20px); // that is the trick with width;
+  max-width : calc(50% - 20px);
+  margin : 10px;
+}
+.column-content {
+  display : flex;
+  justify-content : center;
+  align-items : center;
+  padding : 15px 0;
+  background-color : #ccc;
+}
