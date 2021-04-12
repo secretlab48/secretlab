@@ -104,7 +104,12 @@ body { font-family : 'Oswald'; position: relative; margin : 0; line-height: 1.5;
 
 .menu-box {
     width : 100%; display : flex; justify-content : space-between; align-items : center; padding : 0 15px;
-    a.top-logo-link { padding : 0 5px; border-radius  : 5px; background-color : $text-color; color : $main-bg-color; font-size : 14px; }
+    a.top-logo-link {
+        padding : 0 5px; border-radius  : 5px; background-color : $text-color; color : $main-bg-color; font-size : 14px;
+    }
+    .top-menu li a { position : relative; }
+    .top-menu li a:after { content : ''; position : absolute; bottom : -5px; left : 0; width : 20px; height : 2px; background-color : $main-bg-color; transition : all 0.4s; }
+    .top-menu li a:hover:after, .top-menu li.current-menu-item a:after { width : 100%; }
     .wpml-ls {  }
     .top-menu {
         display : flex; transition : all 0.4s;
@@ -404,6 +409,8 @@ h1.page-title, h2.section-title { margin: 0 0 25px 0; font-size: 5vw; color : $p
 
 @media screen and ( max-width : 640px ) {
 
+    .main-menu-opened { overflow : hidden !important; }
+
     .logo-box { width : 60px; }
     .fpbg-content { padding : 0 60px; }
     .hww-item-box { flex: 0 0 calc(100% - 40px); };
@@ -418,6 +425,10 @@ h1.page-title, h2.section-title { margin: 0 0 25px 0; font-size: 5vw; color : $p
     h2.section-title { text-align : center; font-size : 40px; }
 
     .main-menu li a { font-size : 36px; }
+    .main-menu-col:last-child { display : block; }
+
+    .top-menu-box .top-menu { display : block; }
+    .menu-box .top-menu li { margin : 0; }
 
     .custom-style { font-size : 24px; }
     .logo-box { width : 0; }
@@ -440,6 +451,7 @@ h1.page-title, h2.section-title { margin: 0 0 25px 0; font-size: 5vw; color : $p
         }
     }
     .fpbg-content { padding : 0 15px; }
+    .fpbg.active .fpbg-inner { left : 0; top : 0; width : 100%; height : 100%; }
     .mpc-right .mpc-content { width : 100%; }
     .mpc-right .mpc-content-box { padding : 0 75px 0 15px; width : calc(100% - 90px); }
     .cf-inputs-box { display : block; }

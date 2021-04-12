@@ -115,6 +115,14 @@ class UDFT
 
         }
 
+        if ( is_singular( 'portfolio' ) ) {
+
+            $fields = get_fields( $post->ID );
+            $color_type = ( $fields['portfolio_set'][0]['color_type'] == 'dark' ) ? 'darkened' : 'lightened';
+            $classes[] = $color_type;
+
+        }
+
         return $classes;
 
     }
@@ -275,7 +283,7 @@ function udft_get_portfolio_page_content( $atts ) {
     $atts = shortcode_atts( array( ), $atts );
 
     $cats = get_terms( array( 'taxonomy' => 'portfolios_cat', 'hide_empty' => false, 'order_by' => 'slug' ) );
-    $portfolios = new WP_Query( array( 'post_type' => 'portfolio', 'posts_per_page' => -1 ) );
+    $portfolios = new WP_Query( array( 'post_type' => 'portfolio', 'posts_per_page' => -1, 'order' => 'ASC' ) );
 
     $out = '<div class="portfolios-box">';
 
@@ -296,9 +304,10 @@ function udft_get_portfolio_page_content( $atts ) {
         $fields = get_fields( $p->ID );
         $info = $fields['portfolio_set'][0]['info'];
         $terms = wp_get_post_terms( $p->ID, 'portfolios_cat', array('fields' => 'ids') );
+        $color_type = ( $fields['portfolio_set'][0]['color_type'] == 'dark' ) ? 'darkened' : 'lightened';
 
         $content .=
-            '<div class="portfolio-item-box">
+            '<div class="portfolio-item-box ' . $color_type . '">
                 <a class="portfolio-item" href="' . get_permalink( $p->ID ) . '" data-item-cats="' . implode( ',', $terms ) . '">
                     <img class="portfolio-item__image" src="' . $img . '">
                     <div class="portfolio-item__info">
@@ -398,25 +407,29 @@ function send_smtp_email( $phpmailer )
 
 add_filter( 'post_link', function( $link, $post ) {
 
-    $link = explode( '/', rtrim( $link, '/' ) );
+    if ( !is_admin() ) {
 
-    $empty = new stdClass();
-    $empty->name = 'not-categorixed';
+        $link = explode('/', rtrim($link, '/'));
 
-    $terms = wp_get_post_terms( $post->ID, 'category', ['fields' => 'all'] );
-    $cat = ( count( $terms ) > 0 ) ? $terms[0] : $empty->name;
-    foreach( $terms as $term ) {
-        if( get_post_meta( $post->ID, '_yoast_wpseo_primary_category',true ) == $term->term_id ) {
-            $cat = $term;
+        $empty = new stdClass();
+        $empty->name = 'not-categorixed';
+
+        $terms = wp_get_post_terms($post->ID, 'category', ['fields' => 'all']);
+        $cat = (count($terms) > 0) ? $terms[0] : $empty->name;
+        foreach ($terms as $term) {
+            if (get_post_meta($post->ID, '_yoast_wpseo_primary_category', true) == $term->term_id) {
+                $cat = $term;
+            }
         }
-    }
 
-    $lang = '';
-    if ( ICL_LANGUAGE_CODE == 'ru' ) {
-        $lang = '/ru';
-    }
+        $lang = '';
+        if (ICL_LANGUAGE_CODE == 'ru') {
+            $lang = '/ru';
+        }
 
-    $link = site_url() . $lang . '/blog/' . $cat->name . '/' . $link[ ( count( $link ) - 1 ) ];
+        $link = site_url() . $lang . '/blog/' . $cat->name . '/' . $link[(count($link) - 1)];
+
+    }
 
     return $link;
 
@@ -455,6 +468,18 @@ add_filter( 'wpml_current_ls_language_url_endpoint', function( $url, $post_lang,
     return $url;
 
 }, 10, 4 );
+
+
+
+add_action( 'wp_head', function() {
+
+    if ( is_tax( 'category' ) || is_tax( 'portfolios_cat' ) || is_author( ) ) {
+
+        echo '<meta name="robots" content="noindex" />';
+
+    }
+
+} );
 
 
 /*add_filter( 'pre_get_posts', function( $query ) {

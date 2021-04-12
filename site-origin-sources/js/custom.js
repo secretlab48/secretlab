@@ -7,6 +7,9 @@ global.$ = $;
 import { gsap, ScrollTrigger, Draggable, MotionPathPlugin, CSSRulePlugin, EaselPlugin, PixiPlugin,TextPlugin, ScrollToPlugin } from "./gsap/all";
 gsap.registerPlugin( ScrollTrigger, Draggable, MotionPathPlugin, CSSRulePlugin, EaselPlugin, PixiPlugin,TextPlugin, ScrollToPlugin );
 
+var imagesLoaded = require('imagesloaded');
+imagesLoaded.makeJQueryPlugin( $ );
+
 
 import fullpage from 'fullpage.js';
 import Swiper from 'swiper';
@@ -85,34 +88,41 @@ $(document).ready( function() {
 
 
     if ( $('.portfolios-items-box').length > 0 ) {
-        var grid = document.querySelector('.portfolios-items-box');
-        var iso = new Isotope( grid, {
-            itemSelector: '.portfolio-item-box',
-            percentPosition: true,
-            masonry: {
-                columnWidth: '.portfolio-grid-sizer'
+
+        $( 'a.portfolio-item img' ).imagesLoaded( function() {
+
+            var grid = document.querySelector('.portfolios-items-box');
+            var iso = new Isotope( grid, {
+                itemSelector: '.portfolio-item-box',
+                percentPosition: true,
+                masonry: {
+                    columnWidth: '.portfolio-grid-sizer'
+                }
+            });
+            var filterBy;
+
+            function filterByCats(el) {
+                var cats = $(el).find('a').attr('data-item-cats');
+                cats = cats.split(',');
+
+                if (cats.includes(filterBy) || filterBy == 0) {
+                    return true;
+                } else {
+                    return false;
+                }
             }
-        });
-        var filterBy;
 
-        function filterByCats(el) {
-            var cats = $(el).find('a').attr('data-item-cats');
-            cats = cats.split(',');
+            $('.portfolio-cat-item').on('click', function (e) {
+                e.preventDefault();
+                $('.portfolio-cat-item').removeClass('active');
+                $(e.target).addClass('active');
+                filterBy = $(e.target).attr('data-cat-id');
+                iso.arrange({filter: filterByCats});
+            });
 
-            if (cats.includes(filterBy) || filterBy == 0) {
-                return true;
-            } else {
-                return false;
-            }
-        }
+        } );
 
-        $('.portfolio-cat-item').on('click', function (e) {
-            e.preventDefault();
-            $('.portfolio-cat-item').removeClass('active');
-            $(e.target).addClass('active');
-            filterBy = $(e.target).attr('data-cat-id');
-            iso.arrange({filter: filterByCats});
-        });
+
 
     }
 
@@ -388,5 +398,6 @@ $(document).ready( function() {
         portfolioSwiper.slideTo( currentNumber );
         $(this).addClass('active');
     });
+
 
 } );
