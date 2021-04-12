@@ -25,14 +25,17 @@
 .portfolio-item-box, .portfolio-grid-sizer { width : 50%; }
 .portfolio-item {
   display : block; position : relative;
-  img { filter: brightness(75%); }
+  &.darkened img { filter: brightness(75%); }
 }
 
 
 .portfolio-item__info { position : absolute; left : 35px; bottom : 35px; }
+.darkened .portfolio-item__info { background-color: rgba(255, 255, 255, 0.5); }
 .portfolio-item__info:after { position: absolute; content : ''; left : 0; bottom : -5px; width : 50px; height : 2px; background-color : $text-color; opacity : 0; transition : all 0.4s; }
+.darkened .portfolio-item__info:after { background-color : #000; }
 .portfolio-item-box:hover .portfolio-item__info:after { opacity : 1; }
 .portfolio-item__name { font-size : 24px; font-weight : 700; text-transform : capitalize; }
+.darkened .portfolio-item__name, .darkened .portfolio-item__description { color : #000; }
 .portfolio-item__name, .portfolio-item__description { transition : all 0.4s; }
 .portfolio-item-box:hover .portfolio-item__name, .portfolio-item-box:hover .portfolio-item__description { transform : translateY(-20px); }
 

@@ -2,11 +2,12 @@
 
     global $post;
 
-    $thumb = get_the_post_thumbnail_url( $post->ID, 'full' );
-    $fs_style = ( $thumb ) ? ' style="background:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url(' . $thumb . ')";' : '';
-
     $fields = get_fields( $post->ID );
     $set = $fields['portfolio_set'][0];
+
+    $thumb = get_the_post_thumbnail_url( $post->ID, 'full' );
+    $bg = ( $set['color_type'] == 'lightened' ) ? 'linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),' : '';
+    $fs_style = ( $thumb ) ? ' style="background:' . $bg . ' url(' . $thumb . ')";' : '';
 
     get_header( );
 

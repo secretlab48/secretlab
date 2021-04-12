@@ -38,6 +38,7 @@
     "i": "^0.3.6",
     "imagemin-jpegtran": "^6.0.0",
     "imagemin-optipng": "^7.1.0",
+    "imagesloaded": "^4.1.4",
     "isotope-layout": "^3.0.6",
     "lost": "^8.3.1",
     "lottie-web": "^5.5.9",
