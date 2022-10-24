@@ -1,0 +1,25 @@
+.s-blog-page{
+	padding: 30px 0 50px;
+
+	@include mq($md){
+		padding: 70px 0 130px;
+	}
+
+	.c-meta-list {
+		margin-bottom : 10px;
+	}
+
+	.c-meta-list:last-child{
+		margin-bottom: 50px;
+		@include mq($md){
+			margin-bottom: 50px;
+		}
+	}
+}
+
+.s-blog-page__title{
+	margin-bottom: 30px;
+	@include mq($max:$md){
+		@include font(s-large, 40, 700);
+	}
+}

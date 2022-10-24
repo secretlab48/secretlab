@@ -1,0 +1,42 @@
+.c-breadcrumbs {
+    padding: 30px 0 0;
+    // &>span{
+    //     opacity: 0.7; 
+    // }
+    a, span {
+        @include font (l-small, 24, 300);
+        color: palette(primary-dark-blue); 
+        
+    }
+    .breadcrumb_last {
+        font-weight: 400;
+    }
+
+    a{  
+        position: relative;
+        display: inline-block;
+        text-decoration: none;
+        box-sizing: border-box;
+        cursor: pointer; 
+        transition: color 0.3s ease-in; 
+        border-bottom: 1px solid transparent; 
+        
+        &:before {
+            content: "";
+            position: absolute;
+            bottom: 0px;
+            left: 0;
+            height: 1px;
+            width: 0px;
+            background: rgba(palette(primary-blue), 0.9);
+            transition: all 0.3s ease-in;
+        }
+        
+        &:hover {
+            color: palette(primary-blue);
+            &:before {
+                width: 100%;
+            }
+        }  
+    }
+}

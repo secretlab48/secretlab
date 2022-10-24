@@ -1,0 +1,140 @@
+
+.c-meta-list {
+	margin: -10px 0;
+	//opacity: 0.7;
+}
+
+.c-meta-list__item { 
+	margin: 5px 20px 5px 0;
+	
+	@include mq($max:$md){
+		margin-right: 0;
+		flex-grow: 1;
+
+		.s-last-post__meta-wrapper &,
+		.s-blog-page__meta-wrapper & {
+			flex-grow: initial;
+			margin: 5px 20px 5px 0;
+		}
+	} 
+
+	&:last-child{
+		margin-right: 0;
+	} 
+
+	.icon{ 
+		min-width: 20px;
+		width: 25px;
+		height: 26px;
+		display: inline-block;
+		margin: 2px 0 1px;
+	}
+}  
+
+.c-meta-list__item--author {
+	.s-blog-page__meta-wrapper & {
+		@include mq($max: $md) {
+			width: 100%;
+		}
+		@include mq($max: 480) {
+			align-items : flex-start !important;
+		}
+	}
+	a {
+		margin-left : 0;
+	}
+}
+
+.c-meta-list__item--tag {
+	width: 100%;
+
+	.c-media-card & {
+		width: 100%; 
+	
+		@include mq($md){
+			max-width: 640px;
+		}
+		@include mq($lg){
+			max-width: 555px;
+		}
+		@include mq($xl){
+			max-width: 740px;
+		}
+	} 
+
+	.c-meta-list__text { 
+		.c-media-card--column & {
+			flex: 0 0 46%;
+			max-width: 46%;
+		}
+	}
+
+	.s-blog-page__meta-wrapper & {
+		@include mq($md) {
+			margin-top: 15px;
+		}
+	}
+} 
+
+.c-meta-list__item-wrapper {
+	position: relative;
+	width: 100%;  
+	overflow: hidden;
+
+	&::after {
+		content: '';
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 50px;
+		max-width: 742px;
+		overflow: hidden;
+		height: 100%;
+		background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%);
+	}
+
+	&.u-grad-primary-green {
+		&::after {
+			background: linear-gradient(90deg, rgba(0, 168, 133, 0) 0%, #00a885 100%);
+		}
+	}
+}
+
+.c-meta-list__text { 
+	@include font(mid, 36, 500);
+	margin-left: 10px;
+	overflow-wrap: anywhere;
+
+	.c-meta-list__item--tag & {
+		white-space: nowrap;
+		text-decoration: underline;
+		&.c-meta-list__separate {
+			display: inline-flex;
+			flex: 0 0 auto;
+			max-width: none;
+			&:not(:last-child):after {
+				content: ',';
+			}
+		}
+	}
+}
+
+
+a.c-meta-list__text {
+	color: inherit;
+	position: relative;
+	display: inline-block; 
+	box-sizing: border-box;
+	cursor: pointer; 
+	transition: color 0.3s ease-in;  
+	margin-right: 5px; 
+	text-decoration: underline;
+
+	&:hover {
+		color: palette(primary-blue); 
+	}
+
+	&:last-child {
+		margin-right: 0;
+	}
+}

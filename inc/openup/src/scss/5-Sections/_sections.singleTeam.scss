@@ -1,0 +1,15 @@
+.s-single-team {
+	padding-top: 45px;
+	@include mq($md){
+		padding-top: 60px;
+	}
+	.o-banner__description{
+		p{
+			margin-bottom: 40px;
+
+			&:last-of-type{
+				margin-bottom: 0;
+			}
+		}
+	}
+}

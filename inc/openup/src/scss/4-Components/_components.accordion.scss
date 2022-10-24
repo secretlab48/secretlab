@@ -1,0 +1,248 @@
+.c-accordion{
+	padding-top: 50px;
+	position: relative;
+
+	.c-wysiwyg + .c-accordion__link{
+		margin-top: 20px;
+		@include mq($md){
+			margin-top: 30px;
+		}
+	}
+}
+.c-accordion__blurred-bar {
+	position : absolute;
+	left : 0;
+	bottom : -40px;
+	width : 100%;
+	height : 80px;
+	border-radius: 0 0 20px 20px;
+	background: linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 1) 100%);
+	z-index : 1;
+	@include mq($max: $md){
+		background: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 1) 100%);
+		bottom: -25px;
+		height: 100px;
+	}
+}
+.c-accordion__load-more-box {
+	margin-top: 50px;
+	text-align: center;
+	@include mq($max: $sm){
+		margin-top: 80px;
+	}
+}
+
+.c-accordion__card{
+	padding: 30px;
+	margin-bottom: 50px;
+
+	background-color: palette(primary-white);
+	box-shadow: 0px 10px 20px 0px rgba(palette(primary-black), 0.1);
+	border-radius: 20px;
+
+	@include mq($md){
+		padding: 50px;
+	}
+
+	&:last-child{
+		margin-bottom: 0;
+	}
+}
+
+.c-accordion__btn{
+	padding-right: 50px;
+
+	.icon{ 
+		width: 18px;
+    	height: 10px;
+		top: 20px;
+		right: 5px; 
+
+		color: palette(primary-dark-blue);
+	}
+
+	&.active {
+		
+		.c-accordion__btn-label {
+			color: palette(primary-blue);
+			transition: all 0.3s ease-in;
+		}
+
+		.icon {
+			transform: rotate(180deg);
+			transition: all 0.3s ease-in;
+		}
+	}
+}
+
+.JS-accordion--btn {
+	position: relative;
+	cursor: pointer;
+
+	.icon{
+		position: absolute; 
+		transition: all 0.3s ease-in; 
+	} 
+
+	&.active { 
+		.icon {
+			transform: rotate(180deg);
+			transition: all 0.3s ease-in;
+		}
+	}
+}
+
+.c-accordion__btn-label{
+	@include font(s-large, 40, 400);
+
+	transition: all 0.3s ease-in;
+
+	@include mq($md){
+		max-width: 767px;
+	}
+}
+
+.c-accordion__img-wrap{
+	margin-top: 50px;
+	align-self: center;
+	max-width: 300px;
+
+	@include mq($max: $md){
+		flex-grow: 1;
+	}
+
+	@include mq($md) {
+		margin-top: 0;
+		min-width: 200px;
+	}
+
+	@include mq($xl){
+		padding-right: 45px;
+		min-width: 300px;
+	}
+}
+
+.c-accordion__img {
+	margin: 0 auto;
+	padding-bottom: 20px;
+
+	@include mq($md){
+		margin: 0 0 0 auto;
+		padding-bottom: 0;
+		margin-top: 10px;
+	}
+}
+
+.c-accordion__content { 
+	padding-top: 20px;
+
+	@include mq($md) {
+		padding-top: 30px; 
+	}
+
+	&.c-accordion__content--full {
+		max-width: 100%;
+		
+		@include mq($md){ 
+			padding-right: 80px;
+		}
+		@include mq($xl){ 
+			padding-right: 150px;
+		}
+	}
+}
+
+.JS-accordion--content {
+	display: none;
+}
+
+.c-accordion__link{
+	margin-bottom: 20px;
+
+	&:last-of-type{
+		margin-bottom: 0;
+	}
+
+	.c-btn-link{
+		font-weight: 600;
+
+		.icon{
+			color: palette(primary-blue);
+		}
+	}
+}
+
+.c-accordion__content--image {
+	max-width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+	@include mq($md){
+		flex-wrap: nowrap;
+	}
+
+	.c-accordion__description {
+		width: 100%; 
+
+		@include mq($md) {
+			margin-right: 60px;
+		}
+		
+		@include mq($xl) {
+			margin-right: 130px;
+		}
+
+		.c-accordion__content--full & {
+			margin-right: 0;
+		}
+	}
+}
+
+// Accordion link
+
+.c-accordion-link{
+	.c-thema-card &{
+		margin-top: 30px;
+	}
+}
+
+.c-accordion-link__header {
+	display: inline-block; 
+
+	.icon {
+		top: 12px;
+		right: 0;
+		width: 10px;
+		height: 5px;
+	}
+}
+
+.c-accordion-link__header-title { 
+	display: inline-block; 
+	text-decoration: underline;
+
+	padding-right: 24px;
+	@include font(mid, 28, 400);
+}
+
+.c-accordion-link__content { 
+	padding-top: 20px;
+
+	.c-wysiwyg {
+		li {
+			&:before { 
+				content: "\00B7";
+			}
+		}
+	}
+}
+
+.JS-faq-search-container .c-accordion__card.last-question {
+	height: 90px;
+	overflow-y: hidden;
+	border-radius: 20px 20px 0 0;
+	@include mq($max: $sm){
+		height: auto;
+	}
+}

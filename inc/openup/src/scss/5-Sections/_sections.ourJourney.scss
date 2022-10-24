@@ -1,0 +1,294 @@
+.s-our-journey {
+  color: #fff;
+  position: relative;
+  @include mq($max: $sm) {
+    overflow-y: hidden;
+    margin-bottom: 80px;
+  }
+
+  .swiper-pagination {
+    display: none;
+    @include mq($max: $sm) {
+      display: block;
+      position: static;
+      transform: rotate(90deg);
+      margin: 20px 0;
+    }
+  }
+
+  .swiper-pagination-bullet {
+    @include mq($max: $sm) {
+      width: 9px;
+      height: 9px;
+      border: none;
+      opacity: .3;
+    }
+  }
+
+  .swiper-pagination-bullet-active {
+    @include mq($max: $sm) {
+      opacity: 1;
+      background: #fff;
+    }
+  }
+
+
+  .c-slider__nav-button {
+    bottom: -30px;
+    top: auto;
+    @include mq($max: $sm) {
+      position: static;
+    }
+  }
+
+  .c-btn-round {
+    @include mq($max: $sm) {
+      background: transparent;
+      color: #fff;
+      box-shadow: none;
+    }
+  }
+
+  .c-slider__nav-button--next {
+    right: calc(50% - 41px);
+    transform: translate(100%, -50%);
+    @include mq($max: $sm) {
+      transform: translate(0) rotate(90deg);
+    }
+  }
+
+  .c-btn-round--next:before,
+  .c-btn-round--prev:before {
+    @include mq($max: $sm) {
+      display: none;
+    }
+  }
+
+  .c-slider__nav-button--prev {
+    left: calc(50% - 41px);
+    transform: translate(-100%, -50%);
+    @include mq($max: $sm) {
+      transform: translate(0) rotate(90deg);
+    }
+  }
+
+  .c-slider__nav-wrapper {
+    @include mq($max: $sm) {
+      right: 0;
+      top: 50%;
+      position: absolute;
+      flex-direction: column;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+.c-our-journey__background {
+  overflow-y: hidden;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -2;
+
+  img {
+    width: 100%;
+    @include mq($max: $sm) {
+      object-fit: cover;
+    }
+  }
+}
+
+.c-our-journey__wrapper {
+  padding-top: 67px;
+  position: relative;
+  @include mq($max: $sm) {
+    padding-top: 54px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .c-intro__title {
+    margin-bottom: 84px;
+    text-align: center;
+    @include mq($max: $sm) {
+      margin-bottom: 40px;
+      order: -1;
+    }
+  }
+}
+
+.c-our-journey__image {
+  position: absolute;
+  left: -100px;
+  top: 133px;
+  @include mq($max: $xl) {
+    left: 0;
+    top: 171px;
+    width: 200px;
+  }
+  @include mq($max: $lg) {
+    width: 22%;
+  }
+  @include mq($max: $sm) {
+    position: static;
+    width: 300px;
+  }
+
+  &:after {
+    content: '';
+    width: calc(100% + 20px);
+    height: 100%;
+    background: rgba(196, 196, 196, 0.5);
+    position: absolute;
+    left: -20px;
+    top: 0;
+    @include mq($max: $lg) {
+      width: 100%;
+      left: 0;
+    }
+    @include mq($max: $sm) {
+      display: none;
+    }
+  }
+
+  &:before {
+    @include mq($max: $lg) {
+      content: "";
+      width: 245%;
+      height: 0.5px;
+      background: #152361;
+      z-index: -1;
+      position: absolute;
+      left: 100%;
+      top: 70%;
+    }
+    @include mq($max: $sm) {
+      display: none;
+    }
+  }
+
+
+  &:nth-child(2) {
+    right: -100px;
+    left: auto;
+
+    img {
+      @include mq($max: $sm) {
+        margin-left: 14px;
+        margin-right: auto;
+      }
+    }
+
+    @include mq($max: $xl) {
+      right: 0;
+    }
+    @include mq($max: $sm) {
+      order: 1;
+    }
+
+    &:after {
+      left: auto;
+      right: 0;
+    }
+
+    &:before {
+      display: none;
+    }
+  }
+}
+
+.c-our-journey__thread {
+  position: relative;
+  @include mq($max: $xl) {
+    width: 60%;
+  }
+  @include mq($max: $sm) {
+    margin-right: auto;
+    width: 212px;
+  }
+
+  &:before {
+    content: "";
+    width: calc(100% + 80px);
+    height: 1px;
+    background: #152361;
+    z-index: -1;
+    position: absolute;
+    right: 0px;
+    top: 72px;
+    @include mq($max: $lg) {
+      display: none;
+    }
+    @include mq($max: $sm) {
+      width: 1.5px;
+      height: calc(100% + 2px);
+      display: block;
+      right: auto;
+      top: -1px;
+      left: 190px;
+      z-index: 2;
+    }
+  }
+}
+
+.c-our-journey__slide {
+  text-align: center;
+  @include mq($max: $sm) {
+    text-align: right;
+    padding-right: 22px;
+  }
+}
+
+.c-our-journey__slide--month {
+  font-weight: 700;
+  margin-bottom: 28px;
+  position: relative;
+  font-size: 16px;
+  line-height: 19px;
+  @include mq($max: $sm) {
+    margin-bottom: 10px;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: calc(50% - 4px);
+    bottom: -18px;
+    background: #fff;
+    border-radius: 50px;
+    width: 8px;
+    height: 8px;
+    @include mq($max: $sm) {
+      right: -20px;
+      left: auto;
+      top: auto;
+      bottom: -8px;
+    }
+  }
+}
+
+.c-our-journey__slide--info {
+  margin-bottom: 0;
+  font-size: 16px;
+  line-height: 20px;
+  @include mq($max: $sm) {
+    font-weight: 500;
+  }
+}
+
+.c-our-journey__sliderbox {
+  position: relative;
+}
+
+.c-our-journey__swiper {
+  padding-bottom: 108px;
+  overflow-x: hidden;
+  @include mq($max: $sm) {
+    padding-bottom: 0;
+    overflow-x: visible;
+    overflow-y: hidden;
+    height: 319px;
+  }
+}

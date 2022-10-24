@@ -1,0 +1,40 @@
+.c-post-text {
+
+  &.customized-post_text-section {
+    .c-post-text__content-box {
+      margin : 50px 0;
+      padding : 50px;
+      border-radius : 20px;
+      background-color : palette(primary-skin);
+    }
+
+    .c-post-text__title {
+      margin-bottom : 30px;
+      text-align : center;
+      @include font-family(secondary);
+      @include font(s-large, 40, 700);
+      color : palette(primary-dark-blue);
+    }
+
+    .c-wysiwyg {
+      @include font(mid, 36, 300);
+      color : palette(primary-dark-blue);
+      opacity : 0.7;
+    }
+  }
+
+}
+
+.post-button-box {
+  margin : 35px 0 50px 0;
+
+  &.lefted {
+    text-align : left;
+  }
+  &.centered {
+    text-align : center;
+  }
+  &.righted {
+    text-align : right;
+  }
+}

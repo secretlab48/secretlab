@@ -1,0 +1,27 @@
+.c-spacer {
+
+}
+
+.c-spacer--50 {
+  height: 20px;
+
+  @include mq(768) {
+    height: 30px;
+  }
+
+  @include mq(992) {
+    height: 50px;
+  }
+}
+
+.c-spacer--80 {
+  height: 30px;
+
+  @include mq(768) {
+    height: 60px;
+  }
+
+  @include mq(992) {
+    height: 80px;
+  }
+}

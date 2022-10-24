@@ -1,0 +1,189 @@
+.s-calculator {
+  position: relative;
+
+  min-height: 600px;
+  overflow: hidden;
+
+  padding: 0 0 50px;
+
+  @include mq($lg) {
+    overflow: initial;
+
+    padding: 0 0 0 80px;
+  }
+
+  @include mq($xl) {
+    min-height: 680px;
+  }
+
+  &.s-calculator--primary-skin {
+    background-color: palette(primary-skin);
+  }
+
+  &.s-calculator--primary-blue {
+    background-color: palette(primary-blue);
+  }
+
+  &.s-calculator--primary-green {
+    background-color: palette(primary-green);
+  }
+}
+
+.s-calculator__container {
+  position: relative;
+  z-index: 2;
+
+  @include mq($xl) {
+    padding-top: 20px;
+  }
+
+  .s-calculator--column & {
+    padding: 55px 0 80px;
+
+    @include mq($xl) {
+      padding: 0;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: -100%;
+      left: 50%;
+      transform: translateX(-50%);
+
+      width: calc(100% + 100px);
+      height: 100%;
+      background-color: palette(primary-white);
+
+      @include mq($lg) {
+        display: none;
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 85%;
+      bottom: 0;
+      z-index: -1;
+      transform: translateX(-60%);
+      display: block;
+
+      height: 2000px;
+      width: 2000px;
+
+      @include mq($sm) {
+        left: 70%;
+      }
+
+      @include mq($md) {
+        left: 88%;
+      }
+
+      @include mq($lg) {
+        display: none;
+      }
+    }
+  }
+
+  .s-calculator--column-skin & {
+
+    &::before {
+      background: url("/wp-content/themes/openup/img/global/oval-mobile.svg") no-repeat;
+      background-position: center bottom;
+      background-size: cover;
+    }
+  }
+
+  .s-calculator--column-blue & {
+    &::before {
+      background: url("/wp-content/themes/openup/img/global/oval-blue-mob.svg") no-repeat;
+      background-position: center bottom;
+      background-size: cover;
+    }
+  }
+
+  .s-calculator--column-green & {
+
+    &::before {
+      background: url("/wp-content/themes/openup/img/global/oval-green-mob.svg") no-repeat;
+      background-position: center bottom;
+      background-size: cover;
+    }
+  }
+
+}
+
+
+.s-calculator--column {
+  @include mq($lg) {
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+
+      display: block;
+
+      height: 100%;
+      width: 50%;
+    }
+  }
+}
+
+
+.s-calculator--column-skin {
+  @include mq($lg) {
+    &::after {
+      background: url("/wp-content/themes/openup/img/global/oval.svg") no-repeat;
+      background-position: center right;
+      background-size: cover;
+
+    }
+  }
+}
+
+.s-calculator--column-blue {
+  @include mq($lg) {
+    &::after {
+      background: url("/wp-content/themes/openup/img/global/oval_blue.svg") no-repeat;
+      background-position: center right;
+      background-size: cover;
+    }
+  }
+}
+
+.s-calculator--column-green {
+  @include mq($lg) {
+    &::after {
+      background: url("/wp-content/themes/openup/img/global/oval_green.svg") no-repeat;
+      background-position: center right;
+      background-size: cover;
+    }
+  }
+}
+
+.s-calculator__title{
+  margin-bottom: 20px;
+  @include font(l1-large, 54, 900);
+  color: inherit;
+
+  @include mq($md) {
+    margin-bottom: 20px;
+    @include font(x-large, 60, 900);
+  }
+}
+
+
+.s-calculator__cost {
+  display: inline-block;
+  padding: 0 20px;
+  border-radius: 40px;
+  @include font( l-large, 60, 400);
+}
+
+.s-calculator__cost-label {
+  display: inline-block;
+  margin-left: 5px;
+}

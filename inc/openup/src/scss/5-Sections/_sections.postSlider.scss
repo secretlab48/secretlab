@@ -1,0 +1,26 @@
+.s-slider-post{
+	position: relative;
+	padding: 50px 0;
+	@include mq($md){
+		padding: 80px 0;
+	}
+
+	.swiper-wrapper{
+		align-items: center;
+	}
+
+	.swiper-slide{
+		max-width: 345px;
+		box-sizing: border-box;
+		padding: 0 5px;
+
+		@include mq($md){
+			max-width: 800px;
+			padding: 0 16px;
+		}
+	}
+
+	img{
+		margin: 0 auto;
+	}
+}

@@ -1,0 +1,30 @@
+.s-subscribe {
+    padding: 50px 0;
+
+    @include mq($md){
+        padding: 80px 0;
+    }
+    
+    .s-wave__icon {  
+        &.icon-bottom {  
+            width: 428px;
+            height: 309px;
+            bottom: -5px;
+            left: -1px;
+
+            @include mq($md){
+                width: 611px;
+                height: 390px;
+                bottom: -11px;
+                left: -10px;
+            }
+        }
+    }
+
+    .c-intro {
+        margin-bottom: 25px;
+        @include mq($md){
+            margin-bottom: 0;
+        }
+    }
+} 

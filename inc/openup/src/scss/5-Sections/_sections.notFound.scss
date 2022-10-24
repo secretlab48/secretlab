@@ -1,0 +1,47 @@
+.s-not-found {
+    display: block;
+    padding: 40px 0;
+    min-height: 100vh;
+  
+    @include mq($md) {
+      padding: 130px 0;
+    } 
+
+    .c-intro {
+      margin-bottom: 50px;  
+  
+      @include mq($md) {
+        margin-bottom: 80px;  
+      } 
+    }
+
+    .c-intro__title {
+      margin-bottom: 0;
+    }
+  }
+  
+  .s-not-found__logo-wrapper {
+    margin-bottom: 20px;  
+
+    @include mq($md) {
+      margin-bottom: 30px;  
+    } 
+
+    img {
+      max-width: 150px;
+      width: 100%;
+    }
+  }
+
+  .s-popup__img-wrap {
+    margin-bottom: 50px;  
+
+    @include mq($md) {
+      margin-bottom: 80px;  
+    } 
+
+    img {
+      margin: 0 auto;
+      max-width: 170px;
+    }
+  }

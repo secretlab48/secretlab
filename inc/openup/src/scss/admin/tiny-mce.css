@@ -1,0 +1,47 @@
+.has-dropcap:first-letter {
+    float: left;
+    font-size: 3.2rem;
+    line-height: 0.65;
+    margin: 0.16em 0.1em 0 0;
+}
+
+.has-dropcap--h2:first-letter {
+    float: left;
+    font-size: 4.4rem;
+    line-height: 0.65;
+    margin: 0.23em 0.1em 0 0;
+}
+
+ul li {
+    list-style : none;
+}
+
+ul li:before {
+    display: inline-block;
+    content: "-";
+    margin-right: 10px;
+}
+
+ul.custom-bulleted-list li {
+    list-style-type: disc;
+}
+
+ul.custom-bulleted-list li:before {
+    content : none;
+}
+
+.custom-striped-list, .mce-content-body ul {
+    padding-left : 20px;
+}
+
+.mce-content-body ul.custom-bulleted-list {
+    padding-left : 40px;
+}
+
+.custom-striped-list li {
+    display: flex;
+}
+
+.custom-striped-list li:before {
+     display: block;
+}

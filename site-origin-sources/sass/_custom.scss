@@ -319,6 +319,7 @@ h1.page-title, h2.section-title { margin: 0 0 25px 0; font-size: 5vw; color : $p
     &.textarea.focused .cf-placeholder, &.textarea.filled .cf-placeholder, .cf-textarea:focus ~ .cf-placeholder { top : -1.4em; font-size : 0.4em; }
 
 }
+.cf .g-recaptcha { margin : 25px 0 0 0; }
 .cf .form-result { height : 0; overflow : hidden; font-size : 14px; border : $grey; padding : 5px 10px 5px 0; transition : all 0.4s; }
 .cf.got-result .form-result { height : 30px; }
 
@@ -377,6 +378,20 @@ h1.page-title, h2.section-title { margin: 0 0 25px 0; font-size: 5vw; color : $p
 
     .cf-input-holder.focused .cf-placeholder, .cf-input-holder.filled .cf-placeholder, .cf-input-holder .cf-input:focus ~ .cf-placeholder { font-size : 12px; top : -0.8em; }
     .cf-input-holder.textarea.focused .cf-placeholder, .cf-input-holder.textarea.filled .cf-placeholder, .cf-input-holder .cf-textarea:focus ~ .cf-placeholder { top : -1.4em; font-size : 12px; }
+
+}
+
+
+@media screen and ( max-width : 640px ) {
+
+    .home .os-box { opacity : 0; transition : all 1s; }
+    .home .os-box.in-view { opacity : 1; }
+
+    .home .hww-item-box { opacity : 0; transition : all 2s; }
+    .home .hww-item-box.in-view { opacity : 1; }
+
+    .home .fpbg.mp-5 { opacity : 0; transition : all 2s; }
+    .home .fpbg.mp-5.in-view { opacity : 1; }
 
 }
 
@@ -461,7 +476,7 @@ h1.page-title, h2.section-title { margin: 0 0 25px 0; font-size: 5vw; color : $p
 
     .os-box { opacity : 1; }
 
-    .fpbg .hww-item-box { transform: none; opacity: 1; margin : 0 0 25px 0; }
+    .fpbg .hww-item-box { transform: none; /*opacity: 1;*/ margin : 0 0 25px 0; }
     .hww-hidden-content { transform : none; visibility : visible; opacity : 1; }
 
     .page-about .footer .footer-box,

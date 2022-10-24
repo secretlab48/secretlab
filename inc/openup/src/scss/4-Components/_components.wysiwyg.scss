@@ -1,0 +1,85 @@
+.c-wysiwyg {
+	@include font(mid, 36, 300);
+
+	p { 
+		margin-bottom: 0;
+        font-size: inherit;
+        font-weight: inherit;
+        line-height: inherit;
+	}
+
+	blockquote, pre {
+		@include font(s-large, 40, 700);
+		@include font-family(secondary);
+		margin-right: 0;
+		margin-left: 0;
+		opacity: 1;
+		white-space: normal;
+	}
+
+	strong {
+		a {
+			@include font(mid, 18, 700);
+		}
+	}
+
+	a {
+		position: relative;
+		display: inline-block;
+		text-decoration: none;
+		box-sizing: border-box;
+		cursor: pointer;
+		@include font(mid, 18, 300);
+		transition: color 0.3s ease-in;
+		color: palette(primary-dark-blue);
+		border-bottom: 1px solid palette(primary-dark-blue);
+	
+		&:before {
+			content: "";
+			position: absolute;
+			bottom: -1px;
+			left: 0;
+			height: 1px;
+			width: 0px;
+			background: rgba(palette(primary-blue), 0.9);
+			transition: all 0.3s ease-in;
+		}
+	
+		&:hover {
+			color: palette(primary-blue);
+			&:before {
+				width: 100%;
+			}
+		}
+
+		u {
+			text-decoration: none;
+		}
+	}
+
+	ul{
+
+		li{
+			@include font(mid, 36, 300);
+			opacity: 0.7;
+			&:before{
+				display: inline-block;
+				content: '-';
+				margin-right: 10px;
+			}
+		}
+	}
+
+	ol{
+		li{
+			list-style: decimal inside ;
+			@include font(mid, 36, 300);
+			opacity: 0.7;
+			margin-left: 0;
+			&::marker {
+				margin-right : 5px;
+			}
+		}
+	}
+}
+

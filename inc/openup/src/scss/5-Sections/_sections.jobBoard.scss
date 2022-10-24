@@ -1,0 +1,45 @@
+.s-job-board{
+    padding: 80px 0;
+
+    @include mq($lg){
+        padding: 130px 0;
+    }
+}
+
+.s-job-board__head{
+    max-width: 768px;
+    margin: 0 auto 50px;
+    
+    @include mq($md){
+        margin-bottom: 80px;
+    }
+    
+    @include mq($lg){
+        margin-right: 0;
+    }
+}
+
+.s-job-board__filters {
+    margin: 0 -20px;
+    margin-bottom: 0;
+    position: relative;
+    @include mq($lg){
+        margin: 0;
+    }
+}
+
+.s-job-board__title{
+    margin-bottom: 20px;
+    @include mq($md){
+        margin-bottom: 0;
+    }
+}
+
+.s-job-board__profession{
+    margin-bottom: 20px;
+
+    @include mq($lg){
+        padding-top: 45px;
+        margin-bottom: 0;
+    }
+}

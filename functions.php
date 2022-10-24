@@ -206,6 +206,8 @@ function udft_get_contact_form( $atts = array()  ) {
             <div class="cf-placeholder">' . $atts['placeholder_message'] . '</div>
             <div class="cf-error-box"></div>
          </div>
+         <div class="g-recaptcha" data-sitekey="6LdfGDgdAAAAACdamq5Jn0Jvlc5tpAhu4oiCrSTc"></div>
+         <!--<div class="g-recaptcha" data-sitekey="6LdfGDgdAAAAACdamq5Jn0Jvlc5tpAhu4oiCrSTc"></div>-->
          <button class="btn custom-style" type="submit"><span>' . $atts['btn_caption'] . '</span></button>
          <div class="form-result"></div>
     </form>';
@@ -255,15 +257,26 @@ function udft_cf_request() {
 
     if ( $rawdata ) {
         $data = array();
-        $fields = array( 'name', 'email', 'message' );
+        $fields = array( 'name', 'email', 'message', 'g-recaptcha-response' );
         foreach( $rawdata as $i => $info ) {
             if ( in_array( $info['name'], $fields ) ) {
                 $data[$info['name']] = $info['value'];
             }
         }
-        $r = wp_mail( 'secretlab48@gmail.com', site_url() . ' - Site Form E-mail', 'Name - ' . $data['name'] . ';' . PHP_EOL . 'E-mail - ' . $data['email'] . ';' . PHP_EOL . 'Message - ' . $data['message'] );
-        $result = 1;
-        $content = __( 'Your request is send, We will connect with you in 2 hours', 'udft' );
+        $captcha = $data['g-recaptcha-response'];
+        $secretKey = '6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe';
+        $secretKey = '6LdfGDgdAAAAAEB8hM7viCgQv-a3Nt0t1uwi8OEJ';
+        $captcha_response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=" . $secretKey . "&response=" . $captcha);
+        $captcha_responseKeys = json_decode($captcha_response, true);
+        if ( intval( $captcha_responseKeys['success'] ) == 1 ) {
+            $r = wp_mail('secretlab48@gmail.com', site_url() . ' - Site Form E-mail', 'Name - ' . $data['name'] . ';' . PHP_EOL . 'E-mail - ' . $data['email'] . ';' . PHP_EOL . 'Message - ' . $data['message']);
+            $result = 1;
+            $content = __('Your request is send, We will connect with you in 2 hours', 'udft');
+        }
+        else {
+            $result = 0;
+            $content = __('Your request is send, We will connect with you in 2 hours', 'udft');
+        }
     }
     else {
         $result = 0;
@@ -409,6 +422,7 @@ add_filter( 'post_link', function( $link, $post ) {
 
     if ( !is_admin() ) {
 
+        $current_lang = apply_filters( 'wpml_current_language', NULL );
         $link = explode('/', rtrim($link, '/'));
 
         $empty = new stdClass();
@@ -423,7 +437,7 @@ add_filter( 'post_link', function( $link, $post ) {
         }
 
         $lang = '';
-        if (ICL_LANGUAGE_CODE == 'ru') {
+        if ($current_lang == 'ru') {
             $lang = '/ru';
         }
 

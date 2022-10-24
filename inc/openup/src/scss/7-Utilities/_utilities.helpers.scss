@@ -1,0 +1,26 @@
+.u-bg-img {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.u-disabled {
+  transform: translate3d(0,0,0)!important;
+  justify-content: center;
+}
+
+.u-check-mark{
+  &:before{
+    display: inline-block;
+    content: '✓ ';
+    @include font-family(secondary);
+    margin-right: 10px;
+  }
+}
+
+.u-semibold{
+  font-weight: 600;
+}
+
+
+

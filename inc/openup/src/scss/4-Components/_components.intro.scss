@@ -1,0 +1,122 @@
+.c-intro {
+  margin-bottom: 20px;
+
+  &.u-color-primary-white {
+    a {
+      &:not(.c-btn) {
+        color: inherit;
+        border-bottom-color: inherit;
+
+        &:hover {
+          color: palette(primary-blue);
+        }
+      }
+    }
+  }
+
+  &.u-color-primary-dark-blue & {
+    a {
+      &:not(.c-btn) {
+        color: inherit;
+        border-bottom-color: inherit;
+
+        &:hover {
+          color: palette(primary-dark-blue);
+        }
+      }
+    }
+  }
+}
+
+.c-intro__title {
+  margin-bottom: 20px;
+  @include font-family(secondary);
+  @include font(l1-large, 54, 900);
+
+  @include mq($md) {
+    @include font(x-large, 60, 900);
+  }
+
+}
+
+
+.c-intro__description {
+  @include font(mid, 36, 400);
+
+  p {
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  a {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    box-sizing: border-box;
+    cursor: pointer;
+    @include font(mid, 18, 300);
+    transition: color 0.3s ease-in;
+    color: palette(primary-dark-blue);
+    border-bottom: 1px solid palette(primary-dark-blue);
+
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      height: 1px;
+      width: 0px;
+      background: rgba(palette(primary-blue), 0.9);
+      transition: all 0.3s ease-in;
+    }
+
+    &:hover {
+      color: palette(primary-blue);
+
+      &:before {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.c-intro__link {
+  margin-top: 30px;
+  display: flex;
+}
+
+.c-intro__list--check {
+  .c-intro__list-item {
+    padding-left: 35px;
+
+    &:before {
+      position: absolute;
+      content: "";
+      top: 8px;
+      left: 0;
+      width: 15px;
+      height: 15px;
+      background-image: url("../../img/icons/checkIt.svg");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+    }
+  }
+}
+
+.c-intro__list-item {
+  position: relative;
+  margin-bottom: 10px;
+  @include font(mid, 36, 300);
+  opacity: 0.7;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+

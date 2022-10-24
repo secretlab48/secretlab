@@ -1,0 +1,128 @@
+.s-last-post { 
+    padding: 50px 0; 
+  
+    @include mq($lg) {
+      padding: 65px 0;
+    }
+  
+    @include mq($xl) {
+      padding: 80px 0;
+    }
+  
+    .container {
+      position: relative;
+      z-index: 1;
+    } 
+
+    .s-wave__icon {  
+      &.icon-bottom { 
+        width: 477px;
+        height: 507px;
+        max-width: none;
+        left: -20px;
+        bottom: -92px;
+
+        @include mq($md){
+          left: -22px;
+          bottom: -87px;
+        }
+      }
+    }
+}
+
+
+.s-last-post__title { 
+	@include font(s-large, 40, 700);
+    margin-bottom: 20px;
+}
+
+a.s-last-post__title {
+  display: block; 
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.s-last-post__description {
+	@include font(mid, 36, 300);
+
+    p { 
+      font-size: inherit;
+      font-weight: inherit;
+      line-height: inherit;
+      &:last-child {
+          margin-bottom: 0;
+      }
+    }
+
+    a { 
+      text-decoration: underline;
+      transition: color 0.2s ease-in;
+
+      &:hover {
+        color: palette(primary-blue);
+      }
+    }
+}
+
+.s-last-post__link { 
+    margin-top: 20px;
+    margin-bottom: 30px;
+    
+    @include mq($md){
+      margin-top: 10px;
+      margin-bottom: 0;
+    }
+}
+
+.s-last-post__media-img {
+    margin-top: 45px;
+    margin-bottom: 25px;
+  
+    @include mq($lg) { 
+        margin-top: 10px;
+        margin-bottom: 0;
+    }
+  
+    img {
+      display: inline-block;
+    }
+
+    .s-last-post-media--top & { 
+      @include mq($md) {  
+        position: absolute;
+        top: -135px;
+        max-width: 300px;
+        width: 100%;    
+        left: 50%;
+        margin-top: 0;
+        transform: translateX(-50%);
+        margin-top: 0; 
+      }
+    } 
+}
+
+
+.s-last-post-media--center {
+    .row {
+      align-items: center;
+    }
+}
+
+.s-last-post__media-video {
+  margin-top: 45px;
+  margin-bottom: 25px;
+  display: block;
+  width: 100%;
+
+  @include mq($lg) { 
+      margin-top: 0;
+      margin-bottom: 0;
+  }
+}
+
+
+.s-last-post__meta-wrapper {
+  margin-bottom: 20px; 
+}

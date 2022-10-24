@@ -1,0 +1,63 @@
+.c-team-card__flags-box {
+    position : relative;
+    display : flex;
+    flex-direction : row-reverse;
+    justify-content : flex-end;
+}
+
+.c-team-card__flags-box img {
+    width : 16px;
+    height : 16px;
+    border-radius : 50%;
+    margin : 0 0 0 -3px;
+}
+
+.wp-admin.testimonials .custom-hide,
+.wp-admin.testimonials .acf-tab-wrap.-top {
+    display : none;
+}
+
+
+.livestorm-data__box {
+    margin : 25px 0 0 0;
+}
+
+.livestorm-data__update {
+    display : inline-block;
+    position : relative;
+    padding : 10px;
+    background: #2271b1;
+    color : #fff;
+    cursor : pointer;
+}
+
+.livestorm-data__records {
+    display : block;
+}
+
+.livestorm-data__ajax {
+    position : absolute;
+    left : 0;
+    top : 100%;
+    width : 100%;
+    visibility : hidden;
+    opacity : 0;
+    padding : 5px;
+    color : #000;
+    transition : all 0.4s;
+}
+
+.livestorm-data__ajax.active {
+    visibility : visible;
+    opacity : 1;
+}
+
+
+.ls-admin__events { }
+.ls-admin__events-box { }
+.ls-admin__event { max-width : 360px; margin-bottom : 5px; }
+.ls-admin__event__name { font-weight : 900; cursor : pointer; }
+.ls-admin__event__sessions { padding : 5px 0 5px 10px; }
+.ls-admin__event__session { margin-bottom : 3px; padding : 5px 10px; cursor : pointer; }
+.ls-admin__event__session.selected-session-already { background-color: rgba(0,0,0,0.5); }
+.ls-admin__event__session.active,.ls-admin__event__session.cab-be-reselected, .ls-admin__event__session.selected-session-already.cab-be-reselected { background-color: rgba(0,0,0,0.2); }

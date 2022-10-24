@@ -1,0 +1,22 @@
+<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_9235_42339" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="30" height="30">
+<path d="M0.5 15C0.5 6.99187 6.99187 0.5 15 0.5C23.0081 0.5 29.5 6.99187 29.5 15C29.5 23.0081 23.0081 29.5 15 29.5C6.99187 29.5 0.5 23.0081 0.5 15Z" fill="#C4C4C4" stroke="#152361"/>
+</mask>
+<g mask="url(#mask0_9235_42339)">
+<rect x="-6" width="42.0588" height="30" rx="2" fill="white"/>
+<mask id="mask1_9235_42339" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="-6" y="0" width="43" height="30">
+<rect x="-6" width="42.0588" height="30" rx="2" fill="white"/>
+</mask>
+<g mask="url(#mask1_9235_42339)">
+<rect x="-6" width="42.0588" height="30" fill="#0A17A7"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M-7.92795 -2.87479L10.0209 9.21491V-2.00013H20.0349V9.21482L37.9835 -2.87478L40.2234 0.441371L26.0325 9.99987H36.0573V19.9999H26.0326L40.2236 29.5584L37.9837 32.8746L20.0349 20.7849V31.9999H10.0209V20.7848L-7.92806 32.8745L-10.168 29.5584L4.02297 19.9999H-6.00154V9.99987H4.02306L-10.1679 0.441365L-7.92795 -2.87479Z" fill="white"/>
+<path d="M22.043 9.49826L41.0676 -3.00003" stroke="#DB1F35" stroke-width="0.666667" stroke-linecap="round"/>
+<path d="M24.0625 20.5462L41.1171 32.0255" stroke="#DB1F35" stroke-width="0.666667" stroke-linecap="round"/>
+<path d="M6.02378 9.46564L-11.7656 -2.50653" stroke="#DB1F35" stroke-width="0.666667" stroke-linecap="round"/>
+<path d="M7.95323 20.4073L-11.7656 33.4657" stroke="#DB1F35" stroke-width="0.666667" stroke-linecap="round"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M-6 18H12.0252V30H18.0336V18H36.0588V12H18.0336V0H12.0252V12H-6V18Z" fill="#E6273E"/>
+</g>
+<path d="M-6 0V-1H-7V0H-6ZM36.0588 0H37.0588V-1H36.0588V0ZM36.0588 30V31H37.0588V30H36.0588ZM-6 30H-7V31H-6V30ZM-6 1H36.0588V-1H-6V1ZM35.0588 0V30H37.0588V0H35.0588ZM36.0588 29H-6V31H36.0588V29ZM-5 30V0H-7V30H-5Z" fill="#152361"/>
+<path d="M1 15C1 7.26801 7.26801 1 15 1C22.732 1 29 7.26801 29 15C29 22.732 22.732 29 15 29C7.26801 29 1 22.732 1 15Z" stroke="#152361" stroke-width="2"/>
+</g>
+</svg>

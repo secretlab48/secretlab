@@ -1,0 +1,40 @@
+.c-embed__container { 
+    position: relative; 
+    padding-bottom: 56.25%;
+    overflow: hidden;
+    max-width: 100%;
+    height: auto;
+
+    iframe,
+    object,
+    embed { 
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+} 
+
+.c-embed__wrapper {
+    position: relative;
+
+    padding-bottom: 40px;
+
+    @include mq($md) {
+        padding-bottom: 70px;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+
+        height: 20px;
+        width: 100%;
+        background: rgba(palette(primary-black),  0.08); 
+        filter: blur(10px);
+    }
+}
