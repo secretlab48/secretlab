@@ -1,0 +1,41 @@
+.s-team-cta{ 
+	padding: 50px 0;
+	overflow: hidden;
+	@include mq($md){
+		padding: 60px 0;
+	}
+
+	&.s-wave {
+		.icon-bottom{ 
+			width: 410px;
+			height: 251px;
+			bottom: -140px;
+			left: -15px;
+
+			@include mq($lg){ 
+				height: 262px;
+				bottom: -65px;
+				left: -30px;
+			}
+		}
+	}
+
+	.s-wave__inner-wrapper {
+		@include mq($max: $lg){
+			width: 113%;
+		}
+	}
+}
+
+.s-team-cta__content{
+	position: relative;
+	z-index: 1;
+}
+
+.s-team-cta__title{ 
+	@include font(s-large, 40, 700);
+
+	@include mq($max: $lg){
+		margin-bottom: 30px;
+	}
+}

@@ -1,0 +1,182 @@
+.c-team-card {
+	display: flex;
+  	flex-direction: column;
+
+	min-height: 380px;
+	height: 100%;
+	width: 275px;
+	margin: 0 auto;
+
+	background-color: palette(secondary-skin);
+	border-radius: 20px;
+	box-shadow: 0px 10px 20px 0px rgba(palette(primary-black), 0.1);
+	transition: all 0.2s ease-in-out;
+
+	@include mq($md) {
+		width: 268px;
+	}
+
+	&:hover{ 
+		transform: scale(1.04);
+		
+		.icon {
+			right: -5px;
+		} 
+	} 
+
+	&.c-team-card--hover-none {
+		&:hover {
+			transform: none;
+		
+			.icon {
+				right: 0;
+			} 
+		}
+	}
+
+}
+
+.c-team-card__wrap {
+	height: 100%;
+	padding: 16px 16px 30px; 
+
+	.s-team__slider-container & {
+		padding: 0 16px;
+	}
+}
+
+.c-team-card__name {
+	display: flex;
+	flex-direction: column;
+
+	@include font-family(base);
+
+}
+
+.c-team-card__link-wrapper {
+	width: 100%;
+
+	.icon {
+		color: palette(primary-blue);
+	}
+
+	.c-btn-link {
+		&:hover {
+			.icon {
+				color: palette(primary-blue);
+			}
+		}
+	}
+}
+
+.c-team-card__img {
+	img {
+		width: 100%;
+		height: 268px;
+
+		object-fit: cover;
+		object-position: center;
+		border-radius: 20px 20px 0 0;
+	}
+
+	.c-slider__slide-hidden & {
+		opacity: 0;
+		transition: opacity .3s;
+	}
+}
+
+.c-team-card__body {
+	display: flex;
+  	flex-direction: column;
+	height: 100%;
+	padding: 20px;
+
+	.c-slider__slide-hidden & {
+		opacity: 0;
+		transition: opacity .3s;
+	}
+}
+
+.c-team-card__link {
+	display: flex;
+	justify-content : space-between;
+	padding-right : 0;
+
+	@include font(mid, 36, 600);
+	color: palette(primary-dark-blue);
+
+	&:hover {
+		color: palette(primary-dark-blue);
+	}
+
+	.c-team-card__bio__box {
+		display : inline-block;
+		line-height : 2rem;
+		margin-top : -5px;
+	}
+
+	.c-team-card__flags-box {
+	}
+
+}
+
+.c-team-card__info {
+	display: block;
+	margin-top: auto;
+
+	@include font(mid, 32, 300);
+	color: palette(primary-dark-blue);
+}
+
+.c-team-card__info--link-email { 
+	text-decoration: underline; 
+}
+
+.c-team-card__info--link {
+	position: relative;
+	transition: color 0.3s ease-in;
+
+	&:hover {
+		color: palette(primary-blue);
+	}
+	// text-decoration: underline;
+}
+
+.c-team-card__flags-box {
+	position : relative;
+	display : flex;
+	flex-direction : row-reverse;
+	img {
+		width : 20px;
+		height : 20px;
+		border-radius : 50%;
+		&:not(:only-child) {
+			margin : 0 0 0 -5px;
+		}
+		&.ar-flag {
+			width : 40px;
+			border-radius : 10px;
+		}
+	}
+}
+
+.s-single-team {
+	.c-team-card__flags-box {
+		margin : 0 0 20px 0;
+		justify-content : flex-end;
+		img {
+			width : 30px;
+			height : 30px;
+			margin : 0 10px 0 0;
+			&.ar-flag {
+				width : 60px;
+			}
+		}
+	}
+}
+
+@media all and ( max-width : 768px ) {
+	.c-team-card__link {
+		margin-bottom : 0;
+	}
+}

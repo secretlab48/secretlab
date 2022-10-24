@@ -1,0 +1,82 @@
+.s-related-posts{
+	padding: 50px 0;
+	position: relative;
+
+	@include mq($lg){
+		padding: 130px 0 95px;
+	}
+
+	.c-intro{
+		margin-bottom: 45px;
+	}
+
+	.c-slider__nav-button {
+		transform: translate(0, -50%);
+	}
+	.c-slider__nav-button--prev {
+			left: -5px;
+			@include mq($min:$md, $max:$lg){
+				left: 20px;
+				top: calc(50% - 60px);
+			}
+	
+			@include mq($laptop){
+				transform: translate(-100%, -50%);
+				left: -30px;
+			}
+	}
+
+	.c-slider__nav-button--next {
+			right: -5px;
+	
+			@include mq($min:$md, $max:$lg){
+				right: 20px;
+				top: calc(50% - 60px);
+			}
+	
+			@include mq($laptop){
+				transform: translate(100%, -50%);
+				right: -30px;
+			}
+	}
+
+	.icon-top{
+		width: 120px;
+		height: 237px;
+		top: -103px;
+		right: 0;
+		@include mq($md){
+			width: 265px;
+			height: 523px;
+			top: -21px;
+			right: 0;
+		}
+	}
+
+	.icon-bottom{
+		width: 248px;
+		height: 264px;
+		bottom: -43px;
+		left: -76px;
+		@include mq($md){
+			width: 329px;
+			height: 350px;
+			bottom: -43px;
+			left: -79px;
+		}
+	}
+
+	.swiper-wrapper{
+		align-items: stretch;
+	}
+
+	.swiper-container{
+		.swiper-slide{
+			box-sizing: border-box;
+			height: auto;
+		}
+		@include mq($max:$xl){
+			max-width: 800px;
+		}
+	}
+}

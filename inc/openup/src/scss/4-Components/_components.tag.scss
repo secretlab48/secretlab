@@ -1,0 +1,12 @@
+.c-tag {
+    padding-top: 20px;
+    
+    .c-btn {
+        margin-top: 10px;
+        margin-right: 20px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}

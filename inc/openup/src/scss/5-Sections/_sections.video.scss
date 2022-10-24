@@ -1,0 +1,11 @@
+.s-video {
+    padding: 90px 0;
+
+    @include mq($md) {
+        padding: 130px 0;
+    }
+
+    .c-intro {
+        margin-bottom: 50px;
+    }
+}

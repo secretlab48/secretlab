@@ -1,0 +1,23 @@
+.o-header {
+  padding: 20px 0;
+
+
+  @include mq($xl) { 
+    padding: 30px 0;
+  }
+
+  .container { 
+    position: relative;
+    z-index: 4;
+  }
+} 
+
+.o-header__logo {
+  .custom-logo-link {
+    display: inline-block;
+  }
+  
+  img {
+    max-width: 150px;
+  }
+}

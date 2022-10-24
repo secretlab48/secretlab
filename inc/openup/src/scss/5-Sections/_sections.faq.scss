@@ -1,0 +1,180 @@
+.s-faq{
+	padding: 0 0 100px;
+	@include mq($md){
+		padding: 90px 0 130px;
+	}
+
+	.c-intro{
+		margin-bottom: 30px;
+		@include mq($md){
+			margin-bottom: 80px;
+		}
+	}
+
+	.c-intro__title{
+		margin-bottom: 30px;
+	}
+
+	.o-banner--full + &{
+		padding-top: 0;
+	}
+}
+
+.c-search-filter{
+	margin: 0 0 50px;
+	width: 100%;
+	@include mq($md){
+		min-width: 468px;
+		max-width: 468px;
+		margin: 0 auto 50px auto;
+	}
+}
+
+.c-search-filter__header{
+	@include mq($max: $lg){
+		min-width: 100%;
+	}
+	input{
+		&::-webkit-input-placeholder {
+			opacity: 0.5;
+		}
+		&::-moz-placeholder {
+			opacity: 0.5;
+		}
+		&:-ms-input-placeholder {
+			opacity: 0.5;
+		}
+		&:-moz-placeholder {
+			opacity: 0.5;
+		}
+	}
+}
+
+.s-faq__nav{
+	position : relative;
+	z-index : 1;
+	/*display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: column-reverse;
+	@include mq($md){
+		flex-direction: row;
+	}*/
+
+	.swiper-slide{
+		width: auto;
+		padding: 0 15px;
+
+		&:last-of-type{
+			//padding-right: 0;
+		}
+		&:first-of-type{
+			//padding-left: 0;
+		}
+	}
+}
+
+.s-faq__nav-list{
+	position: relative;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-wrap: wrap;
+	max-width: 100%;
+	
+	/*@include mq($md){
+		max-width: calc(100% - 488px);
+	}*/
+
+	&:before,
+	&:after{
+		position: absolute;
+		content: '';
+		height: 100%;
+		width: 30px;
+		top: 0;
+		z-index: 3;
+		pointer-events: none;
+	}
+
+	.swiper-container {
+		max-width : calc(100% - 54px);
+	}
+
+	&.c-logo-slider--grad-left:after{
+		left: 0;
+		background: linear-gradient(270deg, rgba(255, 253, 251, 0) 0%, palette(secondary-skin) 100%);
+	}
+	&.c-logo-slider--grad-right:before{
+		right: 0;
+		background: linear-gradient(90deg, rgba(255, 253, 251, 0) 0%, palette(secondary-skin) 100%);
+	}
+
+	.s-faq__nav-button {
+		position : absolute;
+		outline : none !important;
+		&:before {
+			content : '' !important;
+			position : absolute;
+			width : 100%;
+			height : 100%;
+			top : 0;
+			background : linear-gradient(90deg, rgba(255, 253, 251, 0) 0%, #FFFDFB 100%);
+		}
+		&.swiper-button-next {
+			right : 0;
+			&:before {
+				right : 100%;
+			}
+		}
+		&.swiper-button-prev {
+			left : 0;
+			&:before {
+				left : 100%;
+				transform: rotate(180deg);
+			}
+		}
+		&:after {
+			content : none;
+		}
+
+		svg {
+			position: absolute;
+			left : 50%;
+			top: 50%;
+			display: block;
+			width: 14px;
+			height: 16px;
+			transform: translate(-50%, -50%);
+			color: #152361;
+		}
+
+	}
+
+}
+
+.s-faq__nav-item{
+	a{
+		@include font(mid, 36, 400);
+		opacity: 0.5;
+		transition: opacity 0.3;
+		&:hover{
+			opacity: 1;
+		}
+		&.active{
+			opacity: 1;
+		}
+	}
+
+	&.active{
+		a{
+			&:hover{
+				opacity: 1;
+			}
+		}
+	}
+}
+
+.s-faq__search-title{
+	margin-bottom: 40px;
+}

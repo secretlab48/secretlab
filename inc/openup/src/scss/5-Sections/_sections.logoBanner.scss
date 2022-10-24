@@ -1,0 +1,53 @@
+.s-logo-banner__link {
+    display: block;
+    padding: 10px 0; 
+
+	@include mq($md) { 
+        padding: 5px 0; 
+	}
+}
+
+.s-logo-banner__text {
+    margin: 10px 0; 
+    
+	@include mq($md) { 
+        margin: 5px 0;
+        padding-right: 50px;
+        min-width: 240px;
+	}
+
+    p {
+        margin-bottom: 0;
+    }
+}
+
+.s-logo-banner__icon-wrap {
+    padding: 10px 0;
+    text-align: center;
+
+	@include mq($md) { 
+        padding: 5px 0;
+	}
+
+    img {
+        display: inline-block;
+
+        width: auto;
+        max-width: 100%;
+
+        @include mq(365) {
+            max-width: 80px;
+            max-height: 80px;
+        }
+
+        @include mq($md) {
+            max-width: 55px;
+            max-height: 55px;
+        }
+
+        @include mq($lg) {
+            max-width: 80px;
+            max-height: 80px;
+        }
+    }
+} 

@@ -1,0 +1,194 @@
+.c-media-card {
+	display: flex;
+	flex-direction: column;
+
+	min-height: 206px;
+	width: 100%;
+
+	margin: 0 auto 50px;
+
+	border-radius: 20px;
+	box-shadow: 0px 10px 17px 0px rgba(palette(primary-black), 0.1);
+
+	overflow: hidden;
+
+	transition: all .2s ease-in-out;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	@include mq($lg) {
+		flex-direction: row;
+	}
+
+	&:hover {
+		transform: scale(1.04);
+	}
+	@include mq($max: $md) {
+		.c-slider--coverflow & {
+			max-width: 275px;
+			transition: all 0s ease-in-out;
+			min-height: 435px;
+
+			.c-media-card__img {
+				height: 155px;
+			}
+
+			.c-media-card__body {
+				padding: 20px;
+			}
+
+			.c-media-card__title {
+				@include font(m-mid-large, 36, 700);
+			}
+		}
+	}
+}
+
+.c-media-card__wrapper {
+	padding: 25px 0;
+	min-height: 100%; 
+
+	.c-media-card {
+		margin: 0 auto;
+	}
+
+	.c-slider--coverflow & {
+		@include mq($max: $md) {
+			display: flex;
+			align-items: stretch;
+		}
+	}
+
+	.c-slider--coverflow & {
+		@include mq($md) {
+			padding: 25px 16px 35px;
+		}
+
+		@include mq($max: $lg) { 
+			.c-media-card__title {
+				@include font(m-mid-large, 36, 700);
+			}
+		}
+	}
+}
+
+.c-media-card__container {
+	padding: 50px 0;
+
+	@include mq($md) {
+		padding: 80px 0;
+	}
+}
+
+.c-media-card__img {
+	position: relative;
+	width: 100%;
+	height: 190px;
+
+	overflow: hidden;
+
+	@include mq($lg) {
+		min-width: 368px;
+		width: 368px;
+		min-height: 100%;
+		height: auto;
+	}
+
+	img {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+
+		width: 100%;
+		max-width: none;
+		min-height: 100%;
+		object-fit: cover;
+	}
+
+	.c-slider__slide-hidden & {
+		opacity: 0;
+		transition: opacity .3s;
+	}
+}
+
+.c-media-card__body {
+	padding: 30px 30px 35px 30px;
+
+	@include mq($md) {
+		padding: 31px 10px 31px 50px;
+	}
+
+	.c-slider__slide-hidden & {
+		opacity: 0;
+		transition: opacity .3s;
+	}
+}
+
+.c-media-card__title {
+	@include font(mid-large, 34, 700);
+	margin-bottom: 20px;
+
+	@include mq($md) {
+		margin-bottom: 10px;
+	}
+
+	
+	.s-media & {
+		@include mq($md) {
+			margin-bottom: 15px;
+		}
+	}
+}
+
+.c-media-card--column {
+	min-height: auto;
+	
+	@include mq($lg) {
+		flex-direction: column;
+		max-width: 368px;
+	}
+
+	.c-media-card__body {
+		padding: 30px;
+	
+		@include mq($lg) {
+			padding: 30px;
+		}
+	}
+	
+	.c-media-card__title {
+		margin-bottom: 20px;
+	}
+
+	.c-media-card__img {
+		height: 190px;
+		min-height: 190px;
+
+		@include mq($md) {
+			max-width: 100%;
+		}
+		
+		@include mq($xl) {
+			height: 207px;
+		}
+
+		img {
+			width: 100%;
+		}
+	}
+}
+
+.c-media-card__slide-hidden {
+	.c-media-card__img {
+		opacity: 0;
+		transition: opacity .3s;
+	}
+
+	.c-media-card__body {	
+		opacity: 0;
+		transition: opacity .3s;
+	}
+}

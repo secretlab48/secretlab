@@ -1,0 +1,17 @@
+.team-slider-custom-section {
+  &.bg-skin {
+    background-color : $_color-primary-skin;
+  }
+
+  &.bg-green {
+    background-color : $_color-primary-green;
+  }
+
+  &.bg-blue {
+    background-color : $_color-primary-blue;
+  }
+
+  &.bg-white {
+    background-color : $_color-primary-white;
+  }
+}

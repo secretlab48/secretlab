@@ -1,0 +1,154 @@
+.c-search-filter {
+	position: relative; 
+
+	margin-top: 60px;
+	border-radius: 30px; 
+	box-sizing: border-box;
+	 
+	transition: border-radius 0.3s 0.3s, border-color 0.3s;
+
+	&.active{
+		border-radius: 30px 30px 0 0;
+		//background-color: palette(primary-skin);
+		transition: border-radius 0s 0s, border-color 0.3s 0.3s; 
+		.c-search-filter__list-wrap {
+			display: block;
+		}
+
+		.c-search-filter__input{
+			background-color: #FBF4E9;  
+		}
+	}
+}
+
+.c-search-filter__header {
+	position: relative;
+	z-index: 3;
+
+	height: 60px;
+
+	.c-btn-round {
+		position: absolute;
+		top: 50%;
+		right: 5px;
+
+		width: 50px;
+		height: 50px;
+
+		transform: translateY(-50%);
+
+		.icon {
+			width: 16px;
+			height: 16px;
+		}
+
+		&.c-search-filter__serch-btn{
+			.icon{
+				width: 24px;
+				height: 24px;
+			}
+
+			&.c-btn-primary--dark-blue {
+				color: palette(primary-dark-blue);
+			}
+
+			&.c-btn-primary--blue {
+				background-color: palette(primary-blue)!important;
+				color: palette(primary-white)!important;
+			}
+		}
+	}
+}
+
+.c-search-filter__input { 
+	position: absolute;
+	left: 0;
+	top: 0;
+
+	width: 100%;
+	height: 100%;
+	padding: 5px 60px 5px 30px;
+
+	border: none;
+	border-radius: 30px;
+	background-color: palette(primary-skin);
+	@include font(mid, 36, 400); 
+
+	&:focus {
+		outline: none;
+		border: none;
+	}
+}
+
+.c-search-filter__list-wrap{
+	position: absolute;
+	width: 100%;
+	z-index: 2;
+	top: 100%;
+	left: 0;
+	display: none;
+	//overflow: hidden;
+	border-radius: 0 0 30px 30px;
+	padding: 20px 30px 30px 0;
+
+	&::after {
+		content: '';
+		position: absolute; 
+		top: -29px;
+		left: 0;
+
+		width: 100%;
+		height: 30px;
+		background-color: palette(primary-skin);
+	}
+}
+
+.c-search-filter__list{
+	max-height: 270px;
+	padding: 0 30px;
+	overflow-y: scroll;
+
+	&::-webkit-scrollbar-track {
+		background: transparent;
+	}
+	
+	&::-webkit-scrollbar {
+		width: 2px;
+	}
+	
+	&::-webkit-scrollbar-thumb {
+		background: palette(primary-dark-blue);
+		height: 130px;
+	}
+
+	&::-webkit-scrollbar-button{
+		background: transparent;
+		height: 30px;
+	}
+}
+
+.c-search-filter__list-item {
+	position: relative;
+	z-index: 2;
+
+	margin-bottom: 5px;
+
+	&:last-of-type{
+		margin-bottom: 0;
+	}
+
+	a {
+		display: block;
+		width: 100%;
+
+		@include font(mid, 36, 400);
+		opacity: 0.7;
+		transition: opacity .3s;
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+}
+
+

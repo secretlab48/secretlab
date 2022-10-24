@@ -1,0 +1,29 @@
+.s-subscription{
+	position: relative;
+	.c-intro__title {
+		margin-bottom: 30px;
+	}
+
+	&+section{
+		padding-top: 130px;
+		@include mq($md){
+			padding-top: 218px;
+		}
+	}
+}
+
+.s-subscription__bg{
+	display: none;
+	@include mq($lg){
+		position: absolute;
+		display: block;
+		top: 0;
+		right: 0;
+		height: 100%;
+		width: calc(50% + 30px);
+		background-image: url('../../img/global/subscription-bg.svg');
+		background-position: 0 0;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+}

@@ -1,0 +1,89 @@
+.c-share-sticky {
+    position: relative;
+
+    .c-share-sticky__label { 
+        position: absolute;
+        top: calc(50% - 25px);
+        left: -70px;
+
+        transform: rotate(-90deg);
+        padding: 5px 20px 9px 20px;
+		@include font(mid, 36, 400);
+        color: palette(primary-dark-blue);
+        background-color: palette(primary-white);
+
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        box-shadow: 0px 10px 20px rgba(51, 51, 51, 0.1);
+
+        @include mq($lg) { 
+            display: none;
+		}
+    }
+
+    .c-share-sticky__label-link{
+        position: absolute;
+        top: 7px;
+        width: 50px;
+        height: 92px;
+        right: 86px;
+        z-index: 10;
+        opacity: 0;
+    }
+
+    .c-share-sticky__inner {
+        top: 150px;
+        transform: translateX(100%);
+        transition: all 0.3s;
+        padding: 30px 20px;
+        background: none; 
+        background-color: palette(primary-white);
+
+        border-radius:20px 0 0 20px;
+        z-index: 3;
+        box-shadow: 0px 10px 20px rgba(51, 51, 51, 0.1);
+        @include mq($lg) { 
+            transform: translateX(0); 
+
+            height: auto;
+
+            padding: 30px 20px; 
+            background-color: palette(secondary-skin);
+		}
+
+        &.show {
+            transform: translateX(0);  
+            .c-share-sticky__label{
+                box-shadow: none;
+            }
+        }
+    }
+
+    .c-share-sticky__link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+
+        width: 46px;
+        height: 46px;
+        background-color: palette(primary-dark-blue);
+        border-radius: 100%;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        img {
+            max-width: 24px; 
+        }
+    }
+
+    .u-bg-primary-white {
+        background-color: palette(primary-white);
+
+        .c-share-sticky__label {
+            color: palette(primary-dark-blue);
+        }
+    }
+}

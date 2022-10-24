@@ -1,7 +1,7 @@
 .page-template.has-sidebar-right { padding : 0 $footer-height 0 $screen-left-padding; }
 .single-post .page-content { min-height : calc(100vh - 60px); }
-.single-post .page-template__content { flex : 0 0 calc(100% - 510px); padding : 0 15px; }
-.single-post .page-template__sidebar { flex : 0 0 465px; padding : 0 15px 0 0; }
+.single-post .page-template__content { flex : 0 0 75%; padding : 0 15px; }
+.single-post .page-template__sidebar { flex : 0 0 21%; max-width : 21%; padding : 0 15px 0 0; }
 
 .single-post {
   h1 { }
@@ -41,12 +41,12 @@
 .search-submit:hover { background: $text-color; border-color : $primary-decor-color; color : $primary-decor-color; }
 
 
-
 @media screen and ( max-width : 1140px ) {
     .single-post {
       .page-template { flex-direction: column-reverse; }
       .page-template__sidebar {
         flex: 0 0 calc(100% - 30px);
+        max-width : none;
         padding: 0 15px;
       }
     }

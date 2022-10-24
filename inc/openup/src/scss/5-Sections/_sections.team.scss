@@ -1,0 +1,99 @@
+.s-team {
+	padding: 80px 0 80px;
+	@include mq($md){
+		padding: 130px 0;
+	}
+
+	.s-testimonials + &{
+		padding: 190px 0 80px;
+		@include mq($md){
+			padding: 130px 0;
+		}
+	}
+
+	.c-slider {
+		margin-bottom: 20px;
+
+		@include mq($md) {
+			margin-bottom: 50px;
+		}
+	} 
+
+	.c-slider__nav-button--prev{
+		@include mq($max: $md){
+			left: -5px;
+		}
+	}
+	.c-slider__nav-button--next{
+		@include mq($max: $md){
+			right: -5px;
+		}
+	}
+}
+
+.s-team__slider-container {
+	margin-top: 15px;
+
+	@include mq($md) {
+		margin-top: 45px;
+	}
+
+	.swiper-wrapper {
+		display: flex;
+		align-items: stretch;
+	}
+
+	.swiper-slide {
+		height: auto;
+	}
+
+	.swiper-slide {
+		padding: 16px 0 30px;
+	}
+} 
+
+.s-team__text {
+	@include font(mid, 36, 300);
+	padding: 0 5px;
+	margin-top: 20px;
+
+	a {
+		position: relative;
+		display: inline-block;
+		text-decoration: none;
+		box-sizing: border-box;
+		cursor: pointer;
+		@include font(mid, 18, 300);
+		transition: color 0.3s ease-in;
+		color: palette(primary-dark-blue);
+		border-bottom: 1px solid palette(primary-dark-blue);
+	
+		&:before {
+			content: "";
+			position: absolute;
+			bottom: -1px;
+			left: 0;
+			height: 1px;
+			width: 0px;
+			background: rgba(palette(primary-blue), 0.9);
+			transition: all 0.3s ease-in;
+		}
+	
+		&:hover {
+			color: palette(primary-blue);
+			&:before {
+				width: 100%;
+			}
+		}
+	}
+
+	p {
+        font-size: inherit;
+        font-weight: inherit;
+        line-height: inherit;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}

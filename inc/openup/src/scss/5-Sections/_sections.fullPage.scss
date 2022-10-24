@@ -1,0 +1,49 @@
+.s-full-page {
+    display: block;
+    padding: 40px 0;
+    min-height: 100vh;
+  
+    @include mq($md) {
+      padding: 130px 0;
+    } 
+
+    .c-intro__description {
+      ol {
+        li {
+          &::marker {
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+  
+  .s-full-page__logo-wrapper {
+    margin-bottom: 20px;  
+
+    @include mq($md) {
+      margin-bottom: 30px;  
+    } 
+
+    img {
+      max-width: 150px;
+      width: 100%;
+    }
+  }
+
+  .s-popup__img-wrap {
+    margin: 30px 0; 
+
+    @include mq($md) {
+      margin: 60px 0;  
+    } 
+
+    img {
+      margin: 0 auto;
+      max-width: 170px;
+    }
+  }
+
+  .s-full-page__btn-wrapper {
+    margin-top: 10px;
+  }

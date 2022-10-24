@@ -1,0 +1,57 @@
+.c-quality-mark {
+    position: absolute;
+    bottom: -100px;;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3; 
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+        
+    @include mq($md) {
+        left: 85%;    
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: -40px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: block;
+        height: 18px;
+        width: 120px;
+        background: palette(primary-black); 
+        opacity: 0.15;
+        filter: blur(10px);
+    }
+
+    &.c-quality-mark--small{
+        width: 160px;
+        height: 160px;
+    }
+}
+
+.c-quality-mark__label {
+    display: block;
+    text-align: center;
+    @include font(base, 26, 300);
+    color: palette(primary-white);
+
+    &.c-quality-mark__label--regular{
+        @include font(mid, 36, 400);
+    }
+
+    p {
+        margin-bottom: 0;
+        opacity: 1;
+    }
+}
+
+
+
+

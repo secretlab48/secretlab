@@ -1,0 +1,29 @@
+.s-thema-term{
+	padding: 80px 0 40px;
+	overflow: hidden;
+
+	@include mq($md){
+		padding: 90px 0;
+	}
+}
+
+.s-thema-term--bedrijven{
+	padding: 40px 0 0;
+	@include mq($md){
+		padding: 130px 0;
+	}
+
+	.o-banner__title{
+		@include mq($max:$md){
+			margin-bottom: 80px;
+		}
+	}
+
+	.c-thema-card{
+		padding: 0 0 80px;
+		@include mq($md){
+			padding: 15px 0;
+		}
+	}
+}
+

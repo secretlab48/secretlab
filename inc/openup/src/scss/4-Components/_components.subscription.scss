@@ -1,0 +1,164 @@
+.c-subscription{
+	position: relative;
+	padding: 50px 0;
+	height: 100%;
+
+	@include mq($md){
+		padding: 80px 0;
+	}
+
+	.c-intro__title{
+		margin-bottom: 20px;
+		@include mq($md){
+			margin-bottom: 30px;
+		}
+	}
+
+	.c-quality-mark{
+		top: 0;	
+		left: 0;
+		transform: translate(0,0);
+
+		@include mq($md){
+			top: initial;
+			bottom: 0;	
+			left: initial;
+			right: 0;
+			transform: translate(50% ,50%);
+		}
+
+		@include mq($lg){
+			transform: translate(0 ,50%);
+		}
+
+		@include mq($laptop){
+			transform: translate(55px,50%);
+			&.c-quality-mark--small{
+				transform: translate(20px,50%);
+			}
+		}
+
+		@include mq($max:$lg){
+			width: 160px;
+			height: 160px;
+		}
+	}
+	&.c-subscription--first{
+		@include mq($max:$lg){
+			padding-bottom: 88px;
+		}
+	}
+	
+	&.c-subscription--second{
+		@include mq($max:$lg){
+			padding-top: 81px;
+		}
+		@include mq($max: $md){
+			.c-subscription__price{
+				bottom: -40px;
+			}
+		}
+	}
+}
+
+
+.c-subscription--wave{
+	z-index: 1;
+	&:after{
+		position: absolute;
+		content: '';
+		bottom: 0;
+		left: -20px;
+		width: calc(100% + 40px);
+		height: 100%;
+		z-index: -1;
+		background-image: url('../../img/global/subscription-bg-mobile.svg');
+		background-position: 0 0;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
+	@include mq($md){
+		&:after{
+		left: 50%;
+    width: 100vw;
+		height: calc(100% + 50px);
+    transform: translateX(-50%);
+		}
+	}
+
+	@include mq($lg){
+		&:after{
+			display: none;
+		}
+	}
+}
+
+.c-subscription__list{
+	margin-bottom: 30px;
+}
+
+.c-subscription__list-item{
+	position: relative;
+	margin-bottom: 10px;
+	padding-left: 35px;
+	@include font (mid, 36, 300);
+
+	@include mq($md){
+		margin-bottom: 20px;
+	}
+
+	&:last-child{
+		margin-bottom: 0;
+	}
+
+	&:before{
+		position: absolute;
+		content: '';
+		top: 8px;
+		left: 0;
+		width: 15px;
+		height: 15px;
+		background-image: url('../../img/icons/checkIt.svg');
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: cover;
+	}
+}
+
+.c-subscription__btn{
+	display: flex;
+}
+
+.c-subscription__price{
+	position: absolute;
+	z-index: 10;
+	width: 100%;
+	height: 100%;
+	right: 0;
+	bottom: 0;
+	pointer-events: none;
+	
+	@include mq($max: $md){
+		width: 150px;
+		height: 218px;
+		right: -20px;
+		bottom: 0;
+		overflow: hidden;
+		transform: translateY(135px);
+	}
+}
+
+.c-subscription__price-text{
+	display: block;
+	@include font(l-large, 60, 500);
+
+
+    .c-quality-mark__label--regular & {
+		@include font(x-large, 60, 500);
+    }
+
+	.c-quality-mark--small & {
+		@include font(l-large, 60, 500);
+	}
+}

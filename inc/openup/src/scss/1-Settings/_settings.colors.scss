@@ -1,0 +1,66 @@
+/**
+ *  Global color variables.
+ *	The underscore Never use them directly in the styles, only for functions and mixins.
+ */
+
+$_color-primary-white: #ffffff !default;
+$_color-primary-black: #333333 !default;
+$_color-primary-skin: #fff8ed !default;
+$_color-primary-green: #00a885 !default;
+$_color-primary-blue: #48b4ff !default;
+$_color-primary-dark-blue: #152361 !default;
+$_color-primary-violet: #E6E8F1 !default;
+
+$_color-secondary-white: #ffffff !default;
+$_color-secondary-skin: #fffdfb !default;
+$_color-secondary-gray: #F5F5F5 !default;
+$_color-secondary-green: #0c8e77 !default;
+$_color-secondary-blue: #3ba5ee !default;
+$_color-secondary-dark-blue: #0e1949 !default;
+
+
+/**
+ *  Organize color variables in a Sass Map.
+ *  This way, the colors can be iterated, are more organized, and are more intuitive to reference.
+ */
+$palettes: (
+  "primary-dark-blue": (
+    base: $_color-primary-dark-blue,
+  ),
+  "primary-blue": (
+    base: $_color-primary-blue,
+  ),
+  "primary-green": (
+    base: $_color-primary-green,
+  ),
+  "primary-skin": (
+    base: $_color-primary-skin,
+  ),
+  "primary-white": (
+    base: $_color-primary-white,
+  ),
+  "primary-black": (
+    base: $_color-primary-black,
+  ),
+  "primary-violet": (
+    base: $_color-primary-violet,
+  ),
+  "secondary-dark-blue": (
+    base: $_color-secondary-dark-blue,
+  ),
+  "secondary-blue": (
+    base: $_color-secondary-blue,
+  ),
+  "secondary-green": (
+    base: $_color-secondary-green,
+  ),
+  "secondary-skin": (
+    base: $_color-secondary-skin,
+  ),
+  "secondary-gray": (
+    base: $_color-secondary-gray,
+  ),
+  "secondary-white": (
+    base: $_color-secondary-white,
+  ),
+);

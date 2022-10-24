@@ -1,0 +1,124 @@
+.s-image-card{
+	padding: 80px 0;
+
+	@include mq($md){
+		padding: 130px 0;
+	} 
+
+	.s-wave__inner-wrapper{
+		display: none;
+	}
+
+	&.s-wave{
+		.s-wave__inner-wrapper{
+			display: block;
+
+			.icon-top{
+				width: 224px;
+				height: 443px;
+				top: -15px;
+				right: -19px;
+
+				@include mq($md){
+					width: 265px;
+					height: 523px;
+					top: -24px;
+					right: -64px;
+	
+				}
+			}
+
+			.icon-bottom{
+				width: 327px;
+				height: 347px;
+				left: -72px;
+				bottom: -77px;
+
+				@include mq($md){
+					width: 447px;
+					height: 475px;
+					left: -31px;
+					bottom: -44px;
+				}
+				&.icon-bottom--type2{
+					width: 538px;
+					height: 343px;
+					left: -256px;
+					bottom: -10px;
+				}
+			}
+		}
+	}
+
+	.container {
+		position: relative;
+	} 
+}
+
+
+.c-intro{
+	.s-image-card & { 		
+		margin-bottom: 25px;
+		
+		@include mq($md){
+			margin-bottom: 40px;
+		}		
+		@include mq($lg){
+			margin-bottom: 50px;
+		}
+	}
+	
+	.s-image-card--wide & { 		
+		margin-bottom: 50px;
+
+		@include mq($md){
+			margin-bottom: 70px;
+		}
+	}
+}
+
+.s-image-card__btn{
+	margin-top: 25px;
+	display: flex;
+	justify-content: center;
+	
+	@include mq($md){
+		margin-top: 50px;
+	}
+	
+	.s-image-card--wide & {   		
+		@include mq($md){
+			margin-top: 80px; 
+		}
+	}
+}
+
+.s-image-card__decoration-img {
+	position: absolute;
+	top: -134px;
+	right: 30px; 
+	z-index: 2;
+	max-width: 250px;
+
+	@include mq($lg) {
+		top: -188px;
+		left: 50%;
+		transform: translateX(240px);
+	} 
+
+	@include mq($xl) {
+		transform: translateX(325px);
+	} 
+
+	@include mq($laptop) {
+		transform: translateX(388px);
+	} 
+
+	img {
+		max-height: 200px;
+
+		@include mq($lg) {
+			max-height: 280px;
+		} 
+	}
+}

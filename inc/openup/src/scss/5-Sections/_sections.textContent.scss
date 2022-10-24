@@ -1,0 +1,8 @@
+.s-text-content {
+    padding: 50px 0;
+    color : palette(primary-dark-blue);
+    
+    @include mq($lg) {
+        padding: 80px 0;
+    }
+}
