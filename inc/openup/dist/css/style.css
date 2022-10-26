@@ -14885,6 +14885,78 @@ a.s-last-post__title:hover {
   }
 }
 
+.s-journey.s-journey-slider {
+  padding: 130px 0;
+}
+.s-journey.s-journey-slider .s-journey-slider__top-box {
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+  grid-template-columns: repeat(2, 1fr);
+  margin-bottom: 72px;
+  z-index: 1;
+}
+.s-journey.s-journey-slider .s-journey-slider__top-left {
+  text-align: left;
+}
+.s-journey.s-journey-slider .c-intro__title {
+  font-size: 2.875rem;
+  line-height: 1.3043478261;
+  font-weight: 900;
+  margin: 0;
+}
+.s-journey.s-journey-slider .c-intro__description {
+  margin-top: 20px;
+  opacity: 0.7;
+}
+.s-journey.s-journey-slider .c-intro__description h1, .s-journey.s-journey-slider .c-intro__description h2, .s-journey.s-journey-slider .c-intro__description h3, .s-journey.s-journey-slider .c-intro__description h4, .s-journey.s-journey-slider .c-intro__description h5, .s-journey.s-journey-slider .c-intro__description h6 {
+  font-size: 1.125rem;
+  line-height: 2;
+  font-weight: 700;
+}
+.s-journey.s-journey-slider .c-intro__description ul {
+  padding: 0 0 0 20px;
+  opacity: 0.7 !important;
+}
+.s-journey.s-journey-slider .c-intro__description li {
+  position: relative;
+  line-height: 2;
+}
+.s-journey.s-journey-slider .c-intro__description li:before {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: -10px;
+  width: 2px;
+  height: 2px;
+  background-color: white;
+}
+.s-journey.s-journey-slider .s-journey-slider__top-right {
+  display: -ms-grid;
+  display: grid;
+  justify-content: center;
+}
+.s-journey.s-journey-slider .s-journey-slider__top-right picture {
+  display: block;
+  max-width: 545px;
+}
+@media screen and (max-width: 767px) {
+  .s-journey.s-journey-slider {
+    padding: 80px 0;
+  }
+  .s-journey.s-journey-slider .s-journey-slider__top-box {
+    display: block;
+    margin-bottom: 40px;
+  }
+  .s-journey.s-journey-slider .s-journey-slider__top-right {
+    margin-top: 40px;
+  }
+  .s-journey.s-journey-slider .c-intro__description {
+    font-weight: 300;
+  }
+}
+
 .s-journey__slider-date {
   font-size: 1.125rem;
   line-height: 2;

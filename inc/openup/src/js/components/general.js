@@ -1,8 +1,10 @@
-import {Popup, Cookie, Variables} from "./modules";
+import {Popup, Cookie, Variables, Sticky} from "./modules";
 
 let currentLang = $('body').attr('class').match(/([a-z]{2})-lang/);
 currentLang = currentLang[1];
 console.log(Cookie.getCookie('preferred_lang'));
+
+    const sticky = new Sticky( '.s-steps-numerated .c-intro', '.s-steps-numerated__left', 767 );
 
     $.getJSON( 'https://api.ipregistry.co/?key=39t4hg8n6cp7tvkg&fields=connection,location.country.code&hostname=true&output=xml&pretty=true' )
         .done( function( data ) {

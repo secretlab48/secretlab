@@ -102,6 +102,84 @@
   }
 }
 
+.s-journey.s-journey-slider {
+  padding : 130px 0;
+
+  .s-journey-slider__top-box {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat( 2, 1fr );
+    margin-bottom: 72px;
+    z-index: 1;
+  }
+
+  .s-journey-slider__top-left {
+    text-align: left;
+  }
+
+  .c-intro__title {
+    @include font(x-large, 60, 900);
+    margin : 0;
+  }
+
+  .c-intro__description {
+    margin-top : 20px;
+    opacity : 0.7;
+
+    h1, h2, h3, h4, h5, h6 {
+      @include font(mid, 36, 700);
+    }
+
+    ul {
+      padding: 0 0 0 20px;
+      opacity : 0.7 !important;
+    }
+
+    li {
+      position: relative;
+      line-height: 2;
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: 15px;
+        left: -10px;
+        width: 2px;
+        height: 2px;
+        background-color: white;
+      }
+    }
+  }
+
+  .s-journey-slider__top-right {
+    display : grid;
+    justify-content : center;
+
+    picture {
+      display : block;
+      max-width : 545px;
+    }
+  }
+
+  @include mq( $max:$md ) {
+    padding : 80px 0;
+
+    .s-journey-slider__top-box{
+      display : block;
+      margin-bottom : 40px;
+    }
+
+    .s-journey-slider__top-right{
+      margin-top : 40px;
+    }
+
+    .c-intro__description {
+      font-weight : 300;
+    }
+  }
+
+}
+
 .s-journey__slider-date {
   @include font(mid, 36, 600);
   margin-bottom: 40px;

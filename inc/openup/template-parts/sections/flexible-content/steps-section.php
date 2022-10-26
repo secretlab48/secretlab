@@ -36,7 +36,7 @@ $steps = get_sub_field('steps_section_steps' );
             <div class="s-steps-numerated__left col-12 col-md-6">
                 <div class="c-intro">
 
-                    <<?php echo $title_tag; ?> class="c-intro__heading"><?php echo $section_title; ?><<?php echo $title_tag; ?>/>
+                    <<?php echo $title_tag; ?> class="c-intro__heading"><?php echo $section_title; ?></<?php echo $title_tag; ?>>
 
                     <?php if ( $download_file ) : ?>
                         <div class="c-intro__btn d-flex">

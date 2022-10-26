@@ -128,6 +128,103 @@ export class Cookie {
 
 }
 
+export class Sticky {
+
+    sticky = {};
+
+    constructor ( targetSelector, parentSelector, maxScreenWidth ) {
+        this.init( targetSelector, parentSelector, maxScreenWidth )();
+        $( window ).on( 'resize', this.init.call( this, targetSelector, parentSelector, maxScreenWidth ) );
+    }
+
+    init( targetSelector, parentSelector, maxScreenWidth ) {
+        const _this = this;
+        return function() {
+            if ( $( window ).width() > maxScreenWidth ) {
+
+                _this.sticky = {
+                    'active': true,
+                    'el': $( targetSelector )
+                };
+                _this.sticky.parent = _this.sticky.el.parents( parentSelector );
+                _this.sticky.parent.offset = _this.sticky.parent.offset();
+                _this.sticky.parent.bottom = _this.sticky.parent.offset.top + _this.sticky.parent.height();
+                _this.sticky.width = _this.sticky.el.width();
+                _this.sticky.height = _this.sticky.el.height();
+                _this.sticky.offset = _this.sticky.el.offset();
+                _this.sticky.bottom = _this.sticky.offset.top + _this.sticky.height;
+                _this.sticky.scrollPostition = $(window).scrollTop();
+                _this.sticky.scrolldirection = null;
+
+                $( window ).on( 'scroll', _this.scrollHandler.apply( _this ) );
+
+            } else {
+                _this.sticky = {
+                    'active': false,
+                    'el': $( targetSelector )
+                }
+            }
+            $( _this.sticky.el ).attr( 'style', '');
+        }
+    }
+
+    scrollHandler() {
+        const _this = this;
+        return function() {
+            if ( _this.sticky.active ) {
+                const scrollTop = $( window ).scrollTop();
+                if ( scrollTop > _this.sticky.scrollPostition ) {
+                    _this.sticky.scrolldirection = 'down';
+                } else {
+                    _this.sticky.scrolldirection = 'up';
+                }
+                _this.sticky.scrollPostition = scrollTop;
+                if ( _this.sticky.scrolldirection == 'down' ) {
+                    if ( _this.sticky.parent.offset.top < scrollTop ) {
+                        _this.sticky.el.css({
+                            'position': 'fixed',
+                            'left': _this.sticky.offset.left + 'px',
+                            'width': _this.sticky.width + 'px',
+                            'height': _this.sticky.height + 'px'
+                        });
+                        if ( ( _this.sticky.parent.bottom - _this.sticky.height ) > scrollTop) {
+                            _this.sticky.el.css({
+                                'top': '0px',
+                            });
+                        } else {
+                            _this.sticky.el.css({
+                                'top': ( _this.sticky.parent.bottom - _this.sticky.height - scrollTop ) + 'px',
+                            });
+                        }
+                    }
+                } else if ( _this.sticky.scrolldirection == 'up' ) {
+                    if ( _this.sticky.parent.offset.top < scrollTop ) {
+                        _this.sticky.el.css({
+                            'position': 'fixed',
+                            'left': _this.sticky.offset.left,
+                            'width': _this.sticky.width + 'px',
+                            'height': _this.sticky.height + 'px'
+                        });
+                        if ( ( _this.sticky.parent.bottom - _this.sticky.height ) > scrollTop ) {
+                            _this.sticky.el.css({
+                                'top': '0px',
+                            });
+                        } else {
+                            _this.sticky.el.css({
+                                'top': ( _this.sticky.parent.bottom - _this.sticky.height - scrollTop ) + 'px',
+                            });
+                        }
+                    } else {
+                        _this.sticky.el.css( { 'position': 'static' } );
+                    }
+                }
+            } else {
+                _this.sticky.el.css( { 'position': 'static' } );
+            }
+        }
+    }
+}
+
 export class Variables {
     static blogFilter = $('.JS-blog-filter')
     static faqCategory = $('.JS-faq-category')
