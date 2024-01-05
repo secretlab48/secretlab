@@ -44,12 +44,12 @@
     "lottie-web": "^5.5.9",
     "magnet-mouse": "github:fluffy-factory/magnet-mouse",
     "npm": "^6.10.3",
-    "postcss-csso": "^3.0.0",
     "rellax": "^1.10.0",
     "require-dir": "^1.2.0",
     "run-sequence": "^2.2.1",
     "webpack": "^4.38.0",
-    "webpack-bundle-analyzer": "^3.4.1"
+    "webpack-bundle-analyzer": "^3.4.1",
+    "postcss-csso": "^3.0.0"
   },
   "dependencies": {
     "@barba/core": "^2.4.0",

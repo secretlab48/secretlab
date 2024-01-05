@@ -24,9 +24,10 @@
 .portfolios-items-box { }
 .portfolio-item-box, .portfolio-grid-sizer { width : 50%; }
 .portfolio-item {
-  display : block; position : relative;
+  display : block; position : relative; opacity : 0; transition : all 1.4s;
   &.darkened img { filter: brightness(75%); }
 }
+.portfolio-item.in-view { opacity : 1; }
 
 
 .portfolio-item__info { position : absolute; left : 35px; bottom : 35px; }

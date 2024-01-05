@@ -23,7 +23,9 @@
 
 
 .posts-archive-items-box { }
-.post-archive-item-box, .post-archive-item-box__grid-sizer { width : calc(50% - 10px); margin : 0 0 15px 0; }
+.post-archive-item-box { opacity : 0; transition : all 1.4s; }
+.post-archive-item-box.in-view { opacity : 1; }
+.post-archive-item-box, .post-archive-item-box__grid-sizer { width : calc(50% - 10px); margin : 0 0 35px 0; }
 .post-archive-item {
   padding : 0 0 15px 0; border-bottom : 1px solid #000;
   h2 {

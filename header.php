@@ -19,6 +19,8 @@
             })(window,document,'script','dataLayer','GTM-PRHRRNM');</script>
         <!-- End Google Tag Manager -->
 
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
         <script>
             window.onload = function() {
                 let el = document.querySelector('.fakeLoader');
@@ -28,6 +30,7 @@
 
 		<?php
 
+            $lang = apply_filters( 'wpml_current_language', NULL );
             wp_head();
 
         ?>
@@ -60,7 +63,9 @@
 
                                 <nav class="top-menu-box">
                                     <div class="top-menu-manage"></div>
-                                    <?php wp_nav_menu( array( 'menu' => 'top-menu-' . ICL_LANGUAGE_CODE, 'container' => null, 'menu_class' => 'top-menu' ) ); ?>
+                                    <?php
+                                    wp_nav_menu( array( 'menu' => 'top-menu-' . $lang, 'container' => null, 'menu_class' => 'top-menu' ) );
+                                    ?>
                                 </nav>
                             </div>
 
@@ -69,7 +74,7 @@
                         <nav class="main-menu-container">
                             <div class="main-menu-row row">
                                 <div class="main-menu-col left-col col-2">
-                                    <?php wp_nav_menu( array( 'menu' => 'main-menu-' . ICL_LANGUAGE_CODE, 'container' => null, 'menu_class' => 'main-menu' ) ); ?>
+                                    <?php wp_nav_menu( array( 'menu' => 'main-menu-' . $lang, 'container' => null, 'menu_class' => 'main-menu' ) ); ?>
                                 </div>
                                 <div class="main-menu-col right-col col-2">
                                     <div class="contact-block-box">
